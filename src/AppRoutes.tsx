@@ -1,13 +1,12 @@
 import './App.css'
+import {Layout} from './component/Layout/Layout';
 
 function AppRoutes() {
-
-
   return (
-    <>
-      <h2 className='text-black'>personal portfolio</h2>
-    </>
-  )
+   <main>
+    <Layout/>
+   </main>
+  );
 }
 
-export default AppRoutes
+export default AppRoutes;
