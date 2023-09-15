@@ -8,7 +8,7 @@ const Layout = () => {
       <header>
         <Header />
       </header>
-      <main className="h-full min-h-screen">
+      <main className="h-full min-h-screen text-textColor">
         <Outlet />
       </main>
       <footer className="mb-0">
