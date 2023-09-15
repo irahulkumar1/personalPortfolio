@@ -1,51 +1,113 @@
-import  { useState } from 'react';
-import { HashLink } from 'react-router-hash-link';
+import React, { useState, useEffect } from "react";
+import { HashLink } from "react-router-hash-link";
 
 export function Header() {
-  // State to manage the visibility of the menu
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
-  // Function to toggle the menu
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      // Delay the animation start to give time for the menu to open on initial page load
+      setTimeout(() => {
+        setAnimate(true);
+      }, 300); // Adjust the delay as needed
+    }
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <div className="flex items-center justify-between h-16 bg-pink-300">
-      <header className="flex-col">
-        <section className="logo">
-          <h2 className="text-textHeaderColor font-bold">personal portfolio</h2>
-        </section>
-        <section>
-          {/* Show/hide the menu based on screen size */}
-          <div className={`lg:flex flex-col lg:flex-row lg:gap-8 text-center ${isMenuOpen ? 'block' : 'hidden'}`}>
-            <HashLink to="/" className="text-textHeaderColor">
+    <header className="text-textHeaderColor py-4">
+      {/* Mobile Menu Button */}
+      <button
+        onClick={toggleMobileMenu}
+        className="lg:hidden block pl-4 focus:outline-none"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          {isMobileMenuOpen ? (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          ) : (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          )}
+        </svg>
+      </button>
+      <div
+        className={`${
+          isMobileMenuOpen ? "block" : "hidden lg:flex"
+        } lg:flex items-center lg:items-center justify-center lg:justify-around space-y-8`}
+      >
+        <div className="flex items-center justify-center lg:pl-4">
+          <div className="logo w-12 h-12 bg-gray-700 rounded-full mr-4"></div>
+        </div>
+        <div className="flex justify-center flex-1">
+          <nav className={`space-y-2 lg:space-x-16 lg:items-center`}>
+            <HashLink
+              to="#"
+              className={`block lg:inline ${
+                animate ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ transitionDelay: "0.2s" }}
+            >
               Home
             </HashLink>
-            <HashLink to="/" className="text-textHeaderColor">
+            <HashLink
+              to="#"
+              className={`block lg:inline ${
+                animate ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ transitionDelay: "0.4s" }}
+            >
               About
             </HashLink>
-            <HashLink to="/" className="text-textHeaderColor">
+            <HashLink
+              to="#"
+              className={`block lg:inline ${
+                animate ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ transitionDelay: "0.6s" }}
+            >
               Services
             </HashLink>
-            <HashLink to="/" className="text-textHeaderColor">
+            <HashLink
+              to="#"
+              className={`block lg:inline ${
+                animate ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ transitionDelay: "0.8s" }}
+            >
               Resume
             </HashLink>
-            <HashLink to="/" className="text-textHeaderColor">
+            <HashLink
+              to="#"
+              className={`block lg:inline ${
+                animate ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ transitionDelay: "1.0s" }}
+            >
               Contact
             </HashLink>
-          </div>
-        </section>
-        <section>
-          {/* Hamburger menu button */}
-          <button
-            className="lg:hidden block text-textHeaderColor"
-            onClick={toggleMenu}
-          >
-            {isMenuOpen ? 'Close' : 'Menu'}
-          </button>
-        </section>
-      </header>
-    </div>
+          </nav>
+        </div>
+        <div></div>
+      </div>
+    </header>
   );
 }
