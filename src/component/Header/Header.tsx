@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 
 export function Header() {
@@ -7,10 +7,9 @@ export function Header() {
 
   useEffect(() => {
     if (!isMobileMenuOpen) {
-      // Delay the animation start to give time for the menu to open on initial page load
       setTimeout(() => {
         setAnimate(true);
-      }, 300); // Adjust the delay as needed
+      }, 200); 
     }
   }, [isMobileMenuOpen]);
 
@@ -19,7 +18,7 @@ export function Header() {
   };
 
   return (
-    <header className="text-textHeaderColor py-4">
+    <header className="text-textHeaderColor px-4">
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMobileMenu}
@@ -55,12 +54,12 @@ export function Header() {
         } lg:flex items-center lg:items-center justify-center lg:justify-around space-y-8`}
       >
         <div className="flex items-center justify-center lg:pl-4">
-          <div className="logo w-12 h-12 bg-gray-700 rounded-full mr-4"></div>
+          <div className="logo w-12 h-12 bg-gray-700 rounded-full"></div>
         </div>
         <div className="flex justify-center flex-1">
-          <nav className={`space-y-2 lg:space-x-16 lg:items-center`}>
+          <nav className={`space-y-2 lg:space-x-24 lg:items-center`}>
             <HashLink
-              to="#"
+              to="/"
               className={`block lg:inline ${
                 animate ? "opacity-100" : "opacity-0"
               }`}
@@ -69,16 +68,16 @@ export function Header() {
               Home
             </HashLink>
             <HashLink
-              to="#"
+              to="/About"
               className={`block lg:inline ${
                 animate ? "opacity-100" : "opacity-0"
               }`}
-              style={{ transitionDelay: "0.4s" }}
+              style={{ transitionDelay: "0.3s" }}
             >
               About
             </HashLink>
             <HashLink
-              to="#"
+              to="/Services"
               className={`block lg:inline ${
                 animate ? "opacity-100" : "opacity-0"
               }`}
@@ -87,20 +86,20 @@ export function Header() {
               Services
             </HashLink>
             <HashLink
-              to="#"
+              to="/Resume"
               className={`block lg:inline ${
                 animate ? "opacity-100" : "opacity-0"
               }`}
-              style={{ transitionDelay: "0.8s" }}
+              style={{ transitionDelay: "0.9s" }}
             >
               Resume
             </HashLink>
             <HashLink
-              to="#"
+              to="/Contact"
               className={`block lg:inline ${
                 animate ? "opacity-100" : "opacity-0"
               }`}
-              style={{ transitionDelay: "1.0s" }}
+              style={{ transitionDelay: "1.3s" }}
             >
               Contact
             </HashLink>
