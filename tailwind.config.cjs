@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         textHeaderColor: "#8c90aa",
+        textColor: "#4e5463"
       },
     },
   },
