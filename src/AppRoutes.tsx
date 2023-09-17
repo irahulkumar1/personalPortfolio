@@ -5,7 +5,7 @@ import "./App.css";
 const Layout = lazy(() => import("./component/Layout/Layout"));
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
-const Contact = lazy(() => import("./pages/Contact"));
+const Contact = lazy(() => import("./pages/ContactForm/Contact"));
 const Resume = lazy(() => import("./pages/Resume"));
 const Services = lazy(() => import("./pages/Services"));
 
@@ -44,7 +44,7 @@ function AppRoutes() {
             </Suspense>
           }
         />
-          <Route
+        <Route
           path="/Resume"
           element={
             <Suspense fallback={<div>Loading...</div>}>
@@ -52,7 +52,7 @@ function AppRoutes() {
             </Suspense>
           }
         />
-           <Route
+        <Route
           path="/Services"
           element={
             <Suspense fallback={<div>Loading...</div>}>
@@ -61,7 +61,7 @@ function AppRoutes() {
           }
         />
       </Route>
-      
+
     </Routes>
   );
 }
