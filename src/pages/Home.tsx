@@ -28,13 +28,19 @@ export default function Home() {
             </div>
             <span className="ml-3">Hello</span>
           </div>
-          <p>
-            I'm Rahul Kumar, a Web Developer with a specialization in React, based in
-            Noida, Uttar Pradesh, India. I'm a passionate engineer eager to contribute my skills
-            and collaborate with teams around the world. With 2 years of diverse development
-            experience across various technology stacks, I bring creativity and expertise to
-            every project.
-          </p>
+          <div className="text-left">
+            <p>
+              <span className="block text-4xl font-bold">
+                I'm <span className="text-highLighter">Rahul
+                </span> Kumar
+              </span>
+              Web Developer with a specialization in React, based in
+              Noida, Uttar Pradesh, India. I'm a passionate engineer eager to contribute my skills
+              and collaborate with teams around the world. With 2 years of diverse development
+              experience across various technology stacks, I bring creativity and expertise to
+              every project.
+            </p>
+          </div>
         </div>
         <img
           src={profileImg}
