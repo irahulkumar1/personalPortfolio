@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import profileImg from "../assets/profile'.jpeg";
+import profileImg from "../assets/profile.png";
 import SocialMediaIcons from "../component/SocialMediaIcons/SocialMediaIcons";
 import { TfiArrowRight } from "react-icons/tfi";
 import { HiOutlineMinus } from "react-icons/hi";
