@@ -1,5 +1,6 @@
+// Header.jsx
 import { useState, useEffect } from "react";
-import { HashLink } from "react-router-hash-link";
+import NavigationLinks from "./NavigationLinks"; // Import the NavigationLinks component
 
 export function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,12 +18,15 @@ export function Header() {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Function to close the mobile menu
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
   return (
     <header className="text-textHeaderColor px-4">
-      {/* Mobile Menu Button */}
       <button
         onClick={toggleMobileMenu}
-        className="lg:hidden block pl-4 focus:outline-none"
+        className="lg:hidden block focus:outline-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -54,52 +58,11 @@ export function Header() {
       >
         <div className="flex items-center justify-center lg:pl-4">
           <div className="logo w-12 h-12 bg-gray-700 rounded-full flex justify-center items-center">
-            <p className="text-2xl font-semibold text-highLighter">RK</p>
+            <p className="text-highLighter font-semibold">RK</p>
           </div>
         </div>
         <div className="flex justify-center flex-1">
-          <nav className={`space-y-2 lg:space-x-24 lg:items-center cursor-pointer`}>
-            <HashLink
-              to="/"
-              className={`block lg:inline  ${animate ? "opacity-100" : "opacity-0"
-                }`}
-              style={{ transitionDelay: "0.2s" }}
-            >
-              Home
-            </HashLink>
-            <HashLink
-              to="/About"
-              className={`block lg:inline ${animate ? "opacity-100" : "opacity-0"
-                }`}
-              style={{ transitionDelay: "0.3s" }}
-            >
-              About
-            </HashLink>
-            <HashLink
-              to="/Services"
-              className={`block lg:inline ${animate ? "opacity-100" : "opacity-0"
-                }`}
-              style={{ transitionDelay: "0.6s" }}
-            >
-              Services
-            </HashLink>
-            <HashLink
-              to="/Resume"
-              className={`block lg:inline ${animate ? "opacity-100" : "opacity-0"
-                }`}
-              style={{ transitionDelay: "0.9s" }}
-            >
-              Resume
-            </HashLink>
-            <HashLink
-              to="/Contact"
-              className={`block lg:inline ${animate ? "opacity-100" : "opacity-0"
-                }`}
-              style={{ transitionDelay: "1.3s" }}
-            >
-              Contact
-            </HashLink>
-          </nav>
+          <NavigationLinks animate={animate} closeMobileMenu={closeMobileMenu} />
         </div>
         <div></div>
       </div>
