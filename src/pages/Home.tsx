@@ -45,14 +45,14 @@ export default function Home() {
         <img
           src={profileImg}
           alt=""
-          className="md:w-1/2 w-72 h-72 lg:w-[36rem] lg:h-[36rem] rounded-b-full mt-4"
+          className="md:w-1/2 w-[20rem] lg:w-[36rem] lg:h-[36rem] rounded-b-full mt-4"
         />
       </section>
-      <section className="absolute bottom-[3rem] flex justify-between w-full">
+      <section className="absolute bottom-[3rem] flex justify-center lg:justify-between w-full">
         <div className="text-xl">
           <SocialMediaIcons />
         </div>
-        <p className="transform rotate-90 flex items-center">
+        <p className="transform rotate-90 hidden lg:flex items-center">
           Scroll down
           <span
             className={`pl-3 ${isArrowAnimated
