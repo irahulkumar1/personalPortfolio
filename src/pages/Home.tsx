@@ -45,7 +45,7 @@ export default function Home() {
         <img
           src={profileImg}
           alt=""
-          className="md:w-1/2 w-72 h-72 lg:w-[30rem] lg:h-[30rem] rounded-full mt-4"
+          className="md:w-1/2 w-72 h-72 lg:w-[36rem] lg:h-[36rem] rounded-b-full mt-4"
         />
       </section>
       <section className="absolute bottom-[3rem] flex justify-between w-full">
