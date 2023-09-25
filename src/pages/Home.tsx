@@ -40,6 +40,11 @@ export default function Home() {
               experience across various technology stacks, I bring creativity and expertise to
               every project.
             </p>
+            <div>
+              <button className="bg-highLighter px-6 py-2 mt-5 text-white rounded-sm shadow-lg">
+                Download CV
+              </button>
+            </div>
           </div>
         </div>
         <img
