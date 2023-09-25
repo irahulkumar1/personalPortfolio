@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import profileImg from "../assets/profile.png";
+import profileImg from "../assets/Profile/profile.png";
 import SocialMediaIcons from "../component/SocialMediaIcons/SocialMediaIcons";
 import { TfiArrowRight } from "react-icons/tfi";
 import { HiOutlineMinus } from "react-icons/hi";
+import {Resume} from "../component/Resume/Resume"
 
 export default function Home() {
   const [isArrowAnimated, setIsArrowAnimated] = useState(false);
@@ -41,9 +42,7 @@ export default function Home() {
               every project.
             </p>
             <div>
-              <button className="bg-highLighter px-6 py-2 mt-5 text-white rounded-sm shadow-lg">
-                Download CV
-              </button>
+            <Resume/>
             </div>
           </div>
         </div>
