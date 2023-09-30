@@ -3,7 +3,7 @@ import profileImg from "../assets/Profile/profile.png";
 import SocialMediaIcons from "../component/SocialMediaIcons/SocialMediaIcons";
 import { TfiArrowRight } from "react-icons/tfi";
 import { HiOutlineMinus } from "react-icons/hi";
-import {Resume} from "../component/Resume/Resume"
+import {Resume} from "../component/ResumeButton/ResumeButton"
 
 export default function Home() {
   const [isArrowAnimated, setIsArrowAnimated] = useState(false);
@@ -37,9 +37,7 @@ export default function Home() {
               </span>
               Web Developer with a specialization in React, based in
               Noida, Uttar Pradesh, India. I'm a passionate engineer eager to contribute my skills
-              and collaborate with teams around the world. With 2 years of diverse development
-              experience across various technology stacks, I bring creativity and expertise to
-              every project.
+              and collaborate with teams around the world.
             </p>
             <div>
             <Resume/>

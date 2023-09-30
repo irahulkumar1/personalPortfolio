@@ -29,9 +29,8 @@ export const Resume = () => {
     return (
         <>
             <button
-                className={`relative bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg ${
-                    showProgressBar || showOpenButton ? 'hidden' : ''
-                }`}
+                className={`relative bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg ${showProgressBar || showOpenButton ? 'hidden' : ''
+                    }`}
                 onClick={handleDownloadClick}
                 disabled={showProgressBar}
             >
