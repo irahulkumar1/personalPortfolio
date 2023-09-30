@@ -6,6 +6,7 @@ export default {
       colors: {
         textHeaderColor: "#8c90aa",
         textColor: "#4e5463",
+        darkHeadingColor: "#3e4355",
         highLighter : "#ff033e",
       },
     },

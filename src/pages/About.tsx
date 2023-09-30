@@ -30,12 +30,13 @@ export default function About() {
                 <span><HiOutlineMinus /></span>
                 <span><HiOutlineMinus /></span>
               </div>
-              <h1 className="text-black text-4xl font-bold mb-4">
+              <h1 className="text-darkHeadingColor text-4xl font-bold mb-4">
                 About Me
               </h1>
             </div>
             <p className="text-gray-700 text-lg">
-              Write a brief introduction about yourself here...
+              With 2 years of diverse development experience across various technology stacks, I bring creativity 
+              and expertise to every project.
             </p>
             <button className="bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg">Hire me</button>
           </div>
