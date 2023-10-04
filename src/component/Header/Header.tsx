@@ -65,7 +65,9 @@ export function Header() {
         <div className="flex justify-center flex-1">
           <NavigationLinks animate={animate} closeMobileMenu={closeMobileMenu} />
         </div>
-        <div></div>
+        <div>
+        {/* dp goes here */}
+        </div>
       </div>
     </header>
   );

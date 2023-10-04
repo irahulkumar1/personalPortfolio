@@ -3,7 +3,7 @@ import React from 'react';
 const projects = [
   {
     name: 'Project 1',
-    description: 'This is the first project description.',
+    description: 'here a complete detail will show on the secreen',
   },
   {
     name: 'Project 2',
