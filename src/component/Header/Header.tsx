@@ -59,14 +59,13 @@ export function Header() {
       >
         <div className="flex items-center justify-center lg:pl-4">
           <div className="logo w-12 h-12 bg-gray-700 flex justify-center items-center">
-          <img src={logo}alt="" className="rounded-full " />
+          <img src={logo}alt="" className="rounded-full w-20" />
           </div>
         </div>
         <div className="flex justify-center flex-1">
           <NavigationLinks animate={animate} closeMobileMenu={closeMobileMenu} />
         </div>
         <div>
-        {/* dp goes here */}
         </div>
       </div>
     </header>
