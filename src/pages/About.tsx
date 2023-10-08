@@ -1,29 +1,31 @@
-import profile from "../assets/Profile/profile.png"
+import profile from "../assets/Profile/profile2.jpg"
 import { HiOutlineMinus } from "react-icons/hi";
 
 export default function About() {
   const skills = [
-    { name: 'React', percentage: 70 },
-    { name: 'JavaScript', percentage: 60 },
-    { name: 'Redux', percentage: 60 },
-    { name: 'HTML & CSS', percentage: 70 },
-    { name: 'Tailwind', percentage: 60 },
-    { name: 'Node.js', percentage: 50 },
+    { name: 'JavaScript', percentage: 190 },
+    { name: 'React', percentage: 185 },
+    { name: 'TypeScript', percentage: 165 },
+    { name: 'Redux', percentage: 175 },
+    { name: 'HTML & CSS', percentage: 176 },
+    { name: 'Tailwind', percentage: 165 },
+    { name: 'Node.js', percentage: 150 },
   ];
 
   return (
-    <div className="mt-[6rem]">
-      {/* About Me Section */}
-      <div className="flex flex-col sm:flex-row">
-        <div className="w-full sm:w-1/2 flex justify-center">
-          {/* Add your photo here */}
+
+    <div className="mt-[3rem]">
+      <div className="flex flex-col sm:flex-row items-center">
+        {/* Left side */}
+        <div className="w-full sm:w-1/2 flex justify-center animate-left-appear">
           <img
             src={profile}
             alt="Your Photo"
-            className="max-w-full h-auto rounded-full"
+            className="max-w-full h-auto rounded-full w-[23rem]"
           />
         </div>
-        <div className="w-full sm:w-1/2 mt-4 sm:mt-0 flex justify-center lg:justify-start">
+        {/* Right side */}
+        <div className="w-full sm:w-1/2 mt-4 sm:mt-0 flex justify-center lg:justify-start animate-right-appear">
           <div>
             <div className="flex">
               <div className="flex items-center -space-x-1.5">
@@ -35,15 +37,16 @@ export default function About() {
               </h1>
             </div>
             <p className="text-gray-700 text-lg">
-              With 2 years of diverse development experience across various technology stacks, I bring creativity 
+              With 2 years of diverse development experience across various technology stacks, I bring creativity
               and expertise to every project.
             </p>
-            <button className="bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg">Hire me</button>
+            <button className="bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg">
+              Hire me
+            </button>
           </div>
         </div>
       </div>
-      {/* Skills Section */}
-      <div className="lg:mt-[4rem] px-20 grid sm:grid-cols-2 gap-x-9 relative">
+      <div className="lg:mt-[4rem] px-20 grid sm:grid-cols-2 gap-x-20 relative">
         {skills.map((skill, index) => (
           <div key={index} className="mb-4">
             <p className="text-left font-semibold">{skill.name}</p>
@@ -70,14 +73,38 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      {/* Add CSS for the fill animation */}
       <style>
         {`
           @keyframes fillAnimation {
             0% {
               width: 0;
             }
+          }
+          
+          @keyframes leftAppear {
+            0% {
+              transform: translateX(-100%);
+            }
+            100% {
+              transform: translateX(0%);
+            }
+          }
+          
+          @keyframes rightAppear {
+            0% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(0%);
+            }
+          }
+          
+          .animate-left-appear {
+            animation: leftAppear 1s ease-in-out forwards;
+          }
+          
+          .animate-right-appear {
+            animation: rightAppear 1s ease-in-out forwards;
           }
         `}
       </style>

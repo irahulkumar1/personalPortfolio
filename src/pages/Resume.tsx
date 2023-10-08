@@ -1,4 +1,3 @@
-
 export default function Resume() {
   return (
     <div>
@@ -11,9 +10,9 @@ export default function Resume() {
         <div className="w-[29rem] space-y-7">
           <div className="">
             <p className="text-darkHeadingColor text-center text-2xl font-bold p-5">Education</p>
-            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
-            hover:translate-x-2">
-              <p className="text-sm">Aug 2016 to july 2020</p>
+            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
+            hover:transform hover:translate-x-2">
+              <p className="text-sm">Aug 2016 to July 2020</p>
               <p className="text-xl font-semibold">
                 {/* <span>Icon</span> */}
                 Bachelor's of Technology
@@ -23,9 +22,9 @@ export default function Resume() {
             </div>
           </div>
           <div className="">
-            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
-            hover:translate-x-2">
-              <p className="text-sm">Nov 2021 to july 2022</p>
+            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
+            hover:transform hover:translate-x-2">
+              <p className="text-sm">Nov 2021 to July 2022</p>
               <p className="text-xl font-semibold">
                 {/* <span>Icon</span> */}
                 Higher Secondary School Certificate
@@ -37,8 +36,8 @@ export default function Resume() {
         <div className="w-[29rem] space-y-7">
           <div className="">
             <p className="text-darkHeadingColor text-center text-2xl font-bold p-5">Experience</p>
-            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
-            hover:translate-x-2">
+            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
+            hover:transform hover:translate-x-2">
               <p className="text-sm">Sep 2022 to Present</p>
               <p className="text-xl font-semibold">
                 {/* <span>Icon</span> */}
@@ -48,9 +47,9 @@ export default function Resume() {
             </div>
           </div>
           <div className="">
-            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
-            hover:translate-x-2">
-              <p className="text-sm">Nov 2021 to july 2022</p>
+            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
+            hover:transform hover:translate-x-2">
+              <p className="text-sm">Nov 2021 to July 2022</p>
               <p className="text-xl font-semibold">
                 {/* <span>Icon</span> */}
                 NMS Games Private Ltd
@@ -59,8 +58,8 @@ export default function Resume() {
             </div>
           </div>
           <div className="">
-            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
-            hover:translate-x-2">
+            <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
+            hover:transform hover:translate-x-2">
               <p className="text-sm">Aug 2021 to Oct 2021</p>
               <p className="text-xl font-semibold">
                 {/* <span>Icon</span> */}
