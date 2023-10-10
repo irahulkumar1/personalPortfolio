@@ -21,6 +21,23 @@ export default function ContactForm() {
                 </div>
                 <div className="mb-4">
                     <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+                        Phone No.
+                    </label>
+                    <div className="relative">
+                        <input
+                            type="number"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
+                            placeholder="+919987654301"
+                        />
+                        <span className="absolute top-0 left-0 mt-2 ml-2 text-gray-600 text-xs transition-all transform origin-0 scale-0 group-focus:scale-100 group-focus:text-blue-500">
+                            Mail Address
+                        </span>
+                    </div>
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
                         Mail Address
                     </label>
                     <div className="relative">
