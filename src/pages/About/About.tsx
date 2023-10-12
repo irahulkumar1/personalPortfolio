@@ -1,5 +1,6 @@
-import profile from "../assets/Profile/profile2.jpg"
+import profile from "../../assets/Profile/profile2.jpg"
 import { HiOutlineMinus } from "react-icons/hi";
+import './About.css'
 
 export default function About() {
   const skills = [
@@ -13,18 +14,15 @@ export default function About() {
   ];
 
   return (
-
-    <div className="mt-[3rem]">
+    <div className="mt-[4rem]">
       <div className="flex flex-col sm:flex-row items-center">
-        {/* Left side */}
-        <div className="w-full sm:w-1/2 flex justify-center animate-left-appear">
+        <div className="w-full sm:w-1/2 flex justify-center animate-bounce-left">
           <img
             src={profile}
             alt="Your Photo"
             className="max-w-full h-auto rounded-full w-[23rem]"
           />
         </div>
-        {/* Right side */}
         <div className="w-full sm:w-1/2 mt-4 sm:mt-0 flex justify-center lg:justify-start animate-right-appear">
           <div>
             <div className="flex">
@@ -73,41 +71,6 @@ export default function About() {
           </div>
         </div>
       </div>
-      <style>
-        {`
-          @keyframes fillAnimation {
-            0% {
-              width: 0;
-            }
-          }
-          
-          @keyframes leftAppear {
-            0% {
-              transform: translateX(-100%);
-            }
-            100% {
-              transform: translateX(0%);
-            }
-          }
-          
-          @keyframes rightAppear {
-            0% {
-              transform: translateX(100%);
-            }
-            100% {
-              transform: translateX(0%);
-            }
-          }
-          
-          .animate-left-appear {
-            animation: leftAppear 1s ease-in-out forwards;
-          }
-          
-          .animate-right-appear {
-            animation: rightAppear 1s ease-in-out forwards;
-          }
-        `}
-      </style>
     </div>
   );
 }
