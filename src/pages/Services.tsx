@@ -1,5 +1,3 @@
-import React from 'react';
-
 const projects = [
   {
     name: 'Project 1 - Awesome React App',
