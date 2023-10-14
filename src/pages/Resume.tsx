@@ -1,3 +1,15 @@
+import certificate1 from "../assets/Certificates/2023bootCamp.jpg";
+const certifications = [
+  {
+    title: "Web Development Bootcamp 2023",
+    image: certificate1,
+    link: "https://www.udemy.com/certificate/UC-f45447c1-ec65-4265-af55-a7951c7798ed/",
+  }, {
+    title: "Web Development Bootcamp 2023",
+    image: certificate1,
+    link: "https://www.udemy.com/certificate/UC-f45447c1-ec65-4265-af55-a7951c7798ed/",
+  },
+];
 export default function Resume() {
   return (
     <div>
@@ -68,6 +80,31 @@ export default function Resume() {
               <p>Full Stack Developer Trainee</p>
             </div>
           </div>
+        </div>
+      </section>
+      <section>
+        <p className="text-darkHeadingColor text-center text-2xl font-bold p-5">
+          Certifications
+        </p>
+        <div className="flex flex-wrap gap-10">
+          {certifications.map((certification, index) => (
+            <div
+              key={index}
+              className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-1/5"
+            >
+              <div className="rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-md hover:transform hover:scale-105">
+                <a href={certification.link} target="_blank" rel="noopener noreferrer">
+                  <div className=" rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-md hover:transform hover:scale-105">
+                    <img
+                      src={certification.image}
+                      alt={certification.title}
+                      className="max-w-full"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
