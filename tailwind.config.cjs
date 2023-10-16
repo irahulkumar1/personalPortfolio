@@ -9,6 +9,9 @@ export default {
         darkHeadingColor: "#3e4355",
         highLighter : "#ff033e",
       },
+      animation: {
+        'write': 'write 2s steps(40, end) infinite',
+      },
     },
   },
   plugins: [],
