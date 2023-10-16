@@ -4,7 +4,7 @@ import { useEffect } from "react"; // Import useEffect
 
 interface NavigationLinksProps {
   animate: boolean;
-  closeMobileMenu: () => void; 
+  closeMobileMenu: () => void;
 }
 
 function NavigationLinks({ animate, closeMobileMenu }: NavigationLinksProps) {
@@ -15,7 +15,7 @@ function NavigationLinks({ animate, closeMobileMenu }: NavigationLinksProps) {
   }, [location.pathname, closeMobileMenu]);
 
   return (
-    <nav className={`space-y-2 lg:space-x-24 lg:items-center`}>
+    <nav className={`space-y-2 lg:flex lg:space-x-24 lg:items-center font-semibold  `}>
       <Link
         to="/"
         className={`block lg:inline ${animate ? "opacity-100" : "opacity-0"
