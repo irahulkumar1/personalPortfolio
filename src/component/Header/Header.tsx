@@ -23,6 +23,7 @@ export function Header() {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
+
   return (
     <header className="text-textHeaderColor px-4">
       <button
@@ -55,11 +56,11 @@ export function Header() {
       </button>
       <div
         className={`${isMobileMenuOpen ? "block" : "hidden lg:flex"
-          } lg:flex items-center lg:items-center justify-center lg:justify-around space-y-8`}
+          } lg:flex items-center lg:items-center justify-center lg:justify-around space--8`}
       >
         <div className="flex items-center justify-center lg:pl-4">
-          <div className="logo w-12 h-12 bg-gray-700 flex justify-center items-center">
-          <img src={logo}alt="" className="rounded-full w-20" />
+          <div className="logo w-12 h-12 bg-gray-700 flex justify-center">
+            <img src={logo} alt="" className="rounded-full w-20" />
           </div>
         </div>
         <div className="flex justify-center flex-1">
