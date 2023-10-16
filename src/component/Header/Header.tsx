@@ -56,7 +56,7 @@ export function Header() {
       </button>
       <div
         className={`${isMobileMenuOpen ? "block" : "hidden lg:flex"
-          } lg:flex items-center lg:items-center justify-center lg:justify-around space--8`}
+          } lg:flex items-center lg:items-center justify-center lg:justify-around`}
       >
         <div className="flex items-center justify-center lg:pl-4">
           <div className="logo w-12 h-12 bg-gray-700 flex justify-center">

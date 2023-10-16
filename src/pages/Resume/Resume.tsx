@@ -83,7 +83,6 @@ export default function Resume() {
             >
               <div className="rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-md hover:transform hover:scale-105">
                 <a href={certification.link} target="_blank" rel="noopener noreferrer">
-                  {/* <div className=" rounded-lg transition-transform duration-00 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-md hover:transform hover:scale-105"> */}
                   <img
                     src={certification.image}
                     alt={certification.title}
@@ -92,7 +91,6 @@ export default function Resume() {
                   <p className="p-2 text-darkHeadingColor font-medium text-center">
                     {certification.title}
                   </p>
-                  {/* </div> */}
                 </a>
               </div>
             </div>
