@@ -1,13 +1,14 @@
 import certificate1 from "../assets/Certificates/2023bootCamp.jpg";
+import certificate2 from "../assets/Certificates/ React - The Complete Guide 2023 (incl. React Router & Redux).jpg";
 const certifications = [
   {
     title: "Web Development Bootcamp 2023",
     image: certificate1,
     link: "https://www.udemy.com/certificate/UC-f45447c1-ec65-4265-af55-a7951c7798ed/",
   }, {
-    title: "Web Development Bootcamp 2023",
-    image: certificate1,
-    link: "https://www.udemy.com/certificate/UC-f45447c1-ec65-4265-af55-a7951c7798ed/",
+    title: "React - The Complete Guide 2023 (incl. React Router & Redux)",
+    image: certificate2,
+    link: "https://www.udemy.com/certificate/UC-573a7d6b-c10a-433b-b7b3-8141ed6c5e33/",
   },
 ];
 export default function Resume() {
@@ -90,7 +91,7 @@ export default function Resume() {
           {certifications.map((certification, index) => (
             <div
               key={index}
-              className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-1/5"
+              className="w-1/3 sm:w-1/3 md:w-1/4 lg:w-1/3 px-5"
             >
               <div className="rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-md hover:transform hover:scale-105">
                 <a href={certification.link} target="_blank" rel="noopener noreferrer">
@@ -100,6 +101,9 @@ export default function Resume() {
                       alt={certification.title}
                       className="max-w-full"
                     />
+                    <p className="px-2 text-darkHeadingColor font-medium">
+                      {certification.title}
+                    </p>
                   </div>
                 </a>
               </div>

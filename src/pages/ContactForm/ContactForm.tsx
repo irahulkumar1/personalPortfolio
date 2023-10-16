@@ -28,8 +28,6 @@ export default function ContactForm() {
         return phoneRegex.test(phoneNumber);
     };
 
-
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -41,7 +39,7 @@ export default function ContactForm() {
         }
 
         try {
-            const response = await fetch('https://script.google.com/macros/library/d/1HzFsyAwijQC_uWTfxMEoK0gOAzk9vLLtUM2J-XNq36ZHdaOSre3EYjGA/7', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbyBwaKvH2qgFOD8nOH9hI1DdeqpuH98c170w4M1IpZ1Ri1hZaxXNhCDJWO6Nmv6EBrSEg/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
