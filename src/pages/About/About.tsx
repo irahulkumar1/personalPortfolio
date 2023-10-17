@@ -1,17 +1,10 @@
 import profile from "../../assets/Profile/profile2.jpg"
 import { HiOutlineMinus } from "react-icons/hi";
-import './About.css'
+import { skills } from "./skillData";
+import './About.css';
+
 
 export default function About() {
-  const skills = [
-    { name: 'JavaScript', percentage: 190 },
-    { name: 'React', percentage: 185 },
-    { name: 'TypeScript', percentage: 165 },
-    { name: 'Redux', percentage: 175 },
-    { name: 'HTML & CSS', percentage: 176 },
-    { name: 'Tailwind', percentage: 165 },
-    { name: 'Node.js', percentage: 150 },
-  ];
 
   return (
     <div className="mt-[4rem]">
@@ -47,12 +40,15 @@ export default function About() {
       <div className="lg:mt-[4rem] px-20 grid sm:grid-cols-2 gap-x-20 relative">
         {skills.map((skill, index) => (
           <div key={index} className="mb-4">
-            <p className="text-left font-semibold">{skill.name}</p>
+            <div className="text-left font-semibold flex items-center gap-2 p-2">
+              <span className="text-[1.6rem] flex">{skill.icon}</span>
+              <span>{skill.name}</span>
+            </div>
             <div className="h-2 bg-gray-300 rounded-full">
               <div
                 className="h-full bg-[#3e4455] rounded-full"
                 style={{
-                  width: `${skill.percentage * 2}px`,
+                  width: `${(skill.percentage / 100) * 100}%`,
                   animation: 'fillAnimation 1s ease-in-out forwards',
                 }}
               ></div>

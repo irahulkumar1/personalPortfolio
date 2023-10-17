@@ -7,7 +7,7 @@ const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About/About"));
 const Contact = lazy(() => import("./pages/ContactForm/Contact"));
 const Resume = lazy(() => import("./pages/Resume/Resume"));
-const Services = lazy(() => import("./pages/Services"));
+const Services = lazy(() => import("./pages/Works/Services"));
 
 function AppRoutes() {
   return (
