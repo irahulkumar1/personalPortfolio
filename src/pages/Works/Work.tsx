@@ -1,5 +1,5 @@
 import { projects } from "./workData"
-const Services = () => {
+const Work = () => {
   return (
     <div className="container mx-auto pt-10">
       <h1 className="text-4xl font-semibold text-center mb-8 text-textColor">Explore My Creative Portfolio</h1>
@@ -36,4 +36,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Work;

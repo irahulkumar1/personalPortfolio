@@ -34,7 +34,6 @@ const SocialMedia = () => {
       </div>
       <div className='pt-3'>
         <SocialMediaIcons />
-
       </div>
     </div>
     <div></div>

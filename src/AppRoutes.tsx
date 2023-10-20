@@ -7,7 +7,7 @@ const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About/About"));
 const Contact = lazy(() => import("./pages/ContactForm/Contact"));
 const Resume = lazy(() => import("./pages/Resume/Resume"));
-const Services = lazy(() => import("./pages/Works/Services"));
+const Work = lazy(() => import("./pages/Works/Work"));
 
 function AppRoutes() {
   return (
@@ -53,10 +53,10 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/Services"
+          path="/Work"
           element={
             <Suspense fallback={<div>Loading...</div>}>
-              <Services />
+              <Work />
             </Suspense>
           }
         />
