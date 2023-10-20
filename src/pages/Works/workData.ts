@@ -1,6 +1,6 @@
 export const projects = [
     {
-      name: 'Project 1 - Awesome React App',
+      name: 'Earning Beats',
       description: "Dive into the magic world of React with this amazing project. We've crafted a stunning user interface that will leave you speechless.",
       image: 'project1.jpg', // Add an image URL here
       link: 'https://project1.com', // Add a project URL here

@@ -1,7 +1,6 @@
 import { TfiInstagram, TfiGithub, TfiTwitter, TfiLinkedin } from "react-icons/tfi";
 
 const SocialMediaIcons = () => {
-    // Social media links
     const instagramLink = `https://www.instagram.com/irahulks/`;
     const gitHubLink = `https://github.com/irahulkumar1`;
     const twitterLink = `https://twitter.com/irahulkv`;

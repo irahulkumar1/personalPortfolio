@@ -4,7 +4,7 @@ import SocialMedia from './SocailMedia';
 export default function Contact() {
   return (
     <>
-      <main className="flex items-center h-screen font-[Alegreya]">
+      <main className="flex items-center h-screen">
         <section className="w-1/2 p-8 pr-24 flex justify-end items-center ">
           <div className="w-72 text-right relative flex-col ">
             <p className="text-lg">
