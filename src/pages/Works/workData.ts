@@ -1,10 +1,11 @@
+
 export const projects = [
     {
       name: 'Earning Beats',
-      description: "Dive into the magic world of React with this amazing project. We've crafted a stunning user interface that will leave you speechless.",
+      description: "This is a stock market tutorial website where a YouTube teacher instructs their students on how to get started with the stock market through data analysis of a stock's performance over one week, presented in a table, and further analysis through graphical representations. I worked individually on this project, utilizing the latest technology stacks currently prevalent in the marke You can find the video tutorials on the official YouTube channel: EarningsBeats.",
       image: 'project1.jpg', // Add an image URL here
       link: 'https://project1.com', // Add a project URL here
-      tags: ['React', 'Node.js', 'UI/UX'],
+      tags: ['React', 'TypeScript', 'Tanstack Query', 'Tailwind', 'Node.js'],
     },
     {
       name: 'Project 2 - Web Design Wonderland',
