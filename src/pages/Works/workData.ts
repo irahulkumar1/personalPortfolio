@@ -7,19 +7,19 @@ export const projects = [
       link: 'https://project1.com', // Add a project URL here
       tags: ['React', 'TypeScript', 'Tanstack Query', 'Tailwind', 'Node.js'],
     },
-    {
-      name: 'Project 2 - Web Design Wonderland',
-      description: 'Get lost in the mesmerizing world of web design. Explore a modern and responsive website created with HTML, CSS, and JavaScript.',
-      image: 'project2.jpg', // Add an image URL here
-      link: 'https://project2.com', // Add a project URL here
-      tags: ['HTML', 'CSS', 'JavaScript'],
-    },
-    {
-      name: 'Project 3 - Django Dreams',
-      description: 'Embark on a journey through the Django framework. This project showcases the power of Python, Django, and database management.',
-      image: 'project3.jpg', // Add an image URL here
-      link: 'https://project3.com', // Add a project URL here
-      tags: ['Python', 'Django', 'Database'],
-    },
+    // {
+    //   name: '',
+    //   description: 'Get lost in the mesmerizing world of web design. Explore a modern and responsive website created with HTML, CSS, and JavaScript.',
+    //   image: 'project2.jpg', // Add an image URL here
+    //   link: 'https://project2.com', // Add a project URL here
+    //   tags: ['HTML', 'CSS', 'JavaScript'],
+    // },
+    // {
+    //   name: 'Project 3 - Django Dreams',
+    //   description: 'Embark on a journey through the Django framework. This project showcases the power of Python, Django, and database management.',
+    //   image: 'project3.jpg', // Add an image URL here
+    //   link: 'https://project3.com', // Add a project URL here
+    //   tags: ['Python', 'Django', 'Database'],
+    // },
   ];
   
