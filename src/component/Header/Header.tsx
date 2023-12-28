@@ -10,17 +10,17 @@ export function Header() {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
-    setIsMounted(false); // Reset isMounted state on every click
+    setIsMounted(false);
     if (!isMobileMenuOpen) {
       setTimeout(() => {
         setIsMounted(true);
-      }, 100); // Delay to ensure the transition is visible
+      }, 100); 
     }
   };
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
-    setIsMounted(false); // Reset isMounted state on menu close
+    setIsMounted(false); 
   };
 
   return (
