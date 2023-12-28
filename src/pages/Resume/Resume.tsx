@@ -1,5 +1,4 @@
 import { certifications } from "./ResumeData";
-import { FcGraduationCap } from "react-icons/fc";
 
 export default function Resume() {
   return (
