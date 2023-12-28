@@ -26,7 +26,7 @@ export default function Home() {
             <div className="flex items-center -space-x-1.5">
               <span><HiOutlineMinus /></span>
               <span><HiOutlineMinus /></span>
-              <a href="https://www.youtube.com/@EarningsBeats">Earning Beats</a>
+            
             </div>
             <span className="ml-3">Hello</span>
           </div>

@@ -1,13 +1,13 @@
-import profile from "../../assets/Profile/profile2.jpg"
+import profile from "../../assets/Profile/profile2.jpg";
 import { HiOutlineMinus } from "react-icons/hi";
 import { skills } from "./skillData";
+import { Link } from "react-router-dom";
 import './About.css';
 
 
 export default function About() {
-
   return (
-    <div className="mt-[4rem]">
+    <div className="mt-[4rem] relative">
       <div className="flex flex-col sm:flex-row items-center">
         <div className="w-full sm:w-1/2 flex justify-center animate-bounce-left">
           <img
@@ -18,12 +18,12 @@ export default function About() {
         </div>
         <div className="w-full sm:w-1/2 mt-4 sm:mt-0 flex justify-center lg:justify-start animate-right-appear">
           <div>
-            <div className="flex">
-              <div className="flex items-center -space-x-1.5">
+            <div className="flex gap-x-2  text-4xl font-bold">
+              <span className="flex -space-x-3">
                 <span><HiOutlineMinus /></span>
                 <span><HiOutlineMinus /></span>
-              </div>
-              <h1 className="text-darkHeadingColor text-4xl font-bold mb-4">
+              </span>
+              <h1 className="text-darkHeadingColor mb-4">
                 About Me
               </h1>
             </div>
@@ -31,13 +31,26 @@ export default function About() {
               With 2 years of diverse development experience across various technology stacks, I bring creativity
               and expertise to every project.
             </p>
-            <button className="bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg">
+            <div className="mt-3">
+            <Link to="/Contact" className="bg-highLighter hover:bg-[#ff577f] text-white font-bold py-2 px-4 rounded-sm shadow-lg">
               Hire me
-            </button>
+            </Link>
+            </div>
           </div>
         </div>
       </div>
-      <div className="lg:mt-[4rem] px-20 grid sm:grid-cols-2 gap-x-20 relative">
+      <div className="flex justify-start lg:justfy-center lg:justify-start mt-8 ">
+        <div className="font-bold text-2xl flex items-center lg:transform lg:-rotate-90 lg:-ml-9">
+          <div className="flex gap-x-2 justify-start">
+            <span className="flex items-center -space-x-1.5">
+              <span><HiOutlineMinus /></span>
+              <span><HiOutlineMinus /></span>
+            </span>
+            <p className="ml-2">My Skills</p>
+          </div>
+        </div>
+      </div>
+      <div className="mt-[1rem] lg:px-20 grid sm:grid-cols-2 gap-x-20">
         {skills.map((skill, index) => (
           <div key={index} className="mb-4">
             <div className="text-left font-semibold flex items-center gap-2 p-2">
@@ -55,17 +68,11 @@ export default function About() {
             </div>
           </div>
         ))}
-        <div className="absolute top-10 font-bold text-2xl ">
-          <div className="flex transform -rotate-90 -ml-5">
-            <div className="flex items-center -space-x-1.5">
-              <span><HiOutlineMinus /></span>
-              <span><HiOutlineMinus /></span>
-            </div>
-            <p>
-              My Skills
-            </p>
-          </div>
-        </div>
+      </div>
+      <div className=" mt-5 flex justify-end">
+        <Link to="/Work" className="lg:hidden bg-darkHeadingColor text-white font-bold py-2 px-4 rounded-sm shadow-lg ">
+          Projects
+        </Link>
       </div>
     </div>
   );

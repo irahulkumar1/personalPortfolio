@@ -1,17 +1,14 @@
-// Header.jsx
 import { useState, useEffect } from "react";
 import NavigationLinks from "./NavigationLinks";
-import logo from "../../assets/Profile/create a simple 0.png"
+import logo from "../../assets/Profile/create a simple 0.png";
 
 export function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    if (!isMobileMenuOpen) {
-      setTimeout(() => {
-        setAnimate(true);
-      }, 200);
+    if (isMobileMenuOpen) {
+      setAnimate(true);
     }
   }, [isMobileMenuOpen]);
 
@@ -55,8 +52,9 @@ export function Header() {
         </svg>
       </button>
       <div
-        className={`${isMobileMenuOpen ? "block" : "hidden lg:flex"
-          } lg:flex items-center lg:items-center justify-center lg:justify-around`}
+        className={`lg:flex items-center lg:items-center justify-center lg:justify-around ${
+          isMobileMenuOpen ? "block" : "hidden"
+        }`}
       >
         <div className="flex items-center justify-center lg:pl-4">
           <div className="logo w-12 h-12 bg-gray-700 flex justify-center">
@@ -66,8 +64,7 @@ export function Header() {
         <div className="flex justify-center flex-1">
           <NavigationLinks animate={animate} closeMobileMenu={closeMobileMenu} />
         </div>
-        <div>
-        </div>
+        <div></div>
       </div>
     </header>
   );
