@@ -55,17 +55,13 @@ export default function Home() {
         <div className="text-xl">
           <SocialMediaIcons />
         </div>
-        <p className="transform rotate-90 hidden lg:flex items-center">
-          Scroll down
           <span
             className={`pl-3 ${isArrowAnimated
               ? "animate-ping"
               : ""
               } origin-center`}
           >
-            <TfiArrowRight />
           </span>
-        </p>
       </section>
     </main>
   );

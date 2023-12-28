@@ -1,26 +1,42 @@
-import ContactForm from './ContactForm';
 import { BsArrowRight } from 'react-icons/bs';
+import ContactForm from './ContactForm';
 import SocialMedia from './SocailMedia';
+
 export default function Contact() {
   return (
     <>
-      <main className="flex items-center h-screen">
-        <section className="w-1/2 p-8 pr-24 flex justify-end items-center ">
-          <div className="w-72 text-right relative flex-col ">
+      {/* Laptop Screen */}
+      <section className="hidden lg:flex items-center h-screen">
+        <section className="w-1/2 p-8 pr-24 flex justify-end items-center">
+          <div className="flex flex-col items-center">
             <p className="text-lg">
-              Let’s make something new, different and more meaningful or think more visual or conceptual?
-              <span className='flex items-center justify-end'>
-                <span className="text-2xl">Just say hello!</span>
-              </span>
-              <span className='text-4xl pl-10 absolute -right-16 bottom-1'><BsArrowRight /></span>
+              Let’s make something new, different, and more meaningful or think more visual or conceptual?
+              <span className='text-2xl mt-2'>Just say hello!</span>
             </p>
+            <span className='text-4xl mt-4'><BsArrowRight /></span>
           </div>
         </section>
         <section className="w-1/2 p-8">
           <ContactForm />
         </section>
+      </section>
+
+      {/* Mobile Screen */}
+      <main className="flex flex-col items-center justify-center lg:hidden">
+        <section className="w-full p-8 text-center">
+          <div className="flex flex-col items-center">
+            <p className="text-lg">
+              Let’s make something new, different, and more meaningful or think more visual or conceptual?
+              <span className='text-2xl mt-2'>Just say hello!</span>
+            </p>
+            <span className='text-4xl mt-4'><BsArrowRight /></span>
+          </div>
+        </section>
+        <section className="w-full">
+          <ContactForm />
+        </section>
       </main>
-      <section className="socialMedia bg-[#F0F0F0] flex-none w-full h-[20rem] -z-10 -mt-80 ">
+      <section className="socialMedia bg-[#F0F0F0] flex-none w-full h-[12rem] lg:h-[20rem]">
         <SocialMedia />
       </section>
     </>

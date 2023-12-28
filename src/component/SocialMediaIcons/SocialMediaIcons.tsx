@@ -10,12 +10,12 @@ const SocialMediaIcons = () => {
         <ul className="flex gap-6">
             <li className="cursor-pointer group transform transition-transform duration-500 hover:scale-125">
                 <a
-                    href={instagramLink}
+                    href={linkedInLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="icon-link"
                 >
-                    <TfiInstagram className="icon" />
+                    <TfiLinkedin className="icon" />
                 </a>
             </li>
             <li className="cursor-pointer group transform transition-transform duration-500 hover:scale-125">
@@ -30,22 +30,22 @@ const SocialMediaIcons = () => {
             </li>
             <li className="cursor-pointer group transform transition-transform duration-500 hover:scale-125">
                 <a
+                    href={instagramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="icon-link"
+                >
+                    <TfiInstagram className="icon" />
+                </a>
+            </li>
+            <li className="cursor-pointer group transform transition-transform duration-500 hover:scale-125">
+                <a
                     href={twitterLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="icon-link"
                 >
                     <TfiTwitter className="icon" />
-                </a>
-            </li>
-            <li className="cursor-pointer group transform transition-transform duration-500 hover:scale-125">
-                <a
-                    href={linkedInLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="icon-link"
-                >
-                    <TfiLinkedin className="icon" />
                 </a>
             </li>
         </ul>
