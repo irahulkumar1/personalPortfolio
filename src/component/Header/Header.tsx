@@ -1,70 +1,42 @@
-import { useState, useEffect } from "react";
+// Header.jsx
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 import NavigationLinks from "./NavigationLinks";
 import logo from "../../assets/Profile/create a simple 0.png";
 
 export function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      setAnimate(true);
-    }
-  }, [isMobileMenuOpen]);
+  const [isMounted, setIsMounted] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+    setIsMounted(false);
+    if (!isMobileMenuOpen) {
+      setTimeout(() => {
+        setIsMounted(true);
+      }, 100); 
+    }
   };
 
-  // Function to close the mobile menu
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
+    setIsMounted(false); 
   };
 
   return (
-    <header className="text-textHeaderColor px-4">
-      <button
-        onClick={toggleMobileMenu}
-        className="lg:hidden block focus:outline-none"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          {isMobileMenuOpen ? (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          ) : (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          )}
-        </svg>
-      </button>
-      <div
-        className={`lg:flex items-center lg:items-center justify-center lg:justify-around ${
-          isMobileMenuOpen ? "block" : "hidden"
-        }`}
-      >
-        <div className="flex items-center justify-center lg:pl-4">
+    <header className="text-textHeaderColor">
+      <div className="flex items-center justify-between">
+        <button onClick={toggleMobileMenu} className="lg:hidden block focus:outline-none">
+          {isMobileMenuOpen ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
+        </button>
+      </div>
+      <div className={`${isMobileMenuOpen ? "block" : "hidden lg:block"} lg:flex items-center justify-between`}>
+        <div className="lg:flex items-center hidden">
           <div className="logo w-12 h-12 bg-gray-700 flex justify-center">
             <img src={logo} alt="" className="rounded-full w-20" />
           </div>
         </div>
-        <div className="flex justify-center flex-1">
-          <NavigationLinks animate={animate} closeMobileMenu={closeMobileMenu} />
-        </div>
-        <div></div>
+        <NavigationLinks closeMobileMenu={closeMobileMenu} isMobileMenuOpen={isMobileMenuOpen} isMounted={isMounted} />
       </div>
     </header>
   );

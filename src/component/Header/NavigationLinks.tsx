@@ -1,62 +1,48 @@
 // NavigationLinks.jsx
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react"; // Import useEffect
+import { useEffect, useState } from "react";
 
-interface NavigationLinksProps {
-  animate: boolean;
-  closeMobileMenu: () => void;
-}
-
-function NavigationLinks({ animate, closeMobileMenu }: NavigationLinksProps) {
-  const activebBorderStyle = ' hover:border-red-500 hover:border-b-2 px-2'
+function NavigationLinks({ closeMobileMenu }: any) {
   const location = useLocation();
+  const [isMounted, setIsMounted] = useState(false);
+
+  const navLinks = [
+    { path: "/", text: "Home" },
+    { path: "/About", text: "About" },
+    { path: "/Work", text: "Works" },
+    { path: "/Resume", text: "Resume" },
+    { path: "/Contact", text: "Contact" },
+  ];
+
+  const activeLinkStyle = "text-red-500";
+
+  const handleClick = () => {
+    closeMobileMenu();
+  };
 
   useEffect(() => {
-    closeMobileMenu();
-  }, [location.pathname, closeMobileMenu]);
+    const timeout = setTimeout(() => {
+      setIsMounted(true);
+    }, 100); // Delay to ensure the transition is visible
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
-    <nav className={`space-y-2 lg:flex lg:space-x-24 lg:items-center font-semibold  `}>
-      <Link
-        to="/"
-        className={`block lg:inline ${activebBorderStyle} ${animate ? "opacity-100" : "opacity-0"
-          } ${location.pathname === '/' ? 'text-red-500' : ''}`}
-        style={{ transitionDelay: "0.2s" }}
-      >
-        Home
-      </Link>
-      <Link
-        to="/About"
-        className={`block lg:inline ${activebBorderStyle} ${animate ? "opacity-100" : "opacity-0"
-          } ${location.pathname === '/About' ? 'text-red-500' : ''}`}
-        style={{ transitionDelay: "0.3s" }}
-      >
-        About
-      </Link>
-      <Link
-        to="/Work"
-        className={`block lg:inline ${activebBorderStyle} ${animate ? "opacity-100" : "opacity-0"
-          } ${location.pathname === '/Work' ? 'text-red-500' : ''}`}
-        style={{ transitionDelay: "0.6s" }}
-      >
-        Works
-      </Link>
-      <Link
-        to="/Resume"
-        className={`block lg:inline ${activebBorderStyle} ${animate ? "opacity-100" : "opacity-0"
-          } ${location.pathname === '/Resume' ? 'text-red-500' : ''}`}
-        style={{ transitionDelay: "0.9s" }}
-      >
-        Resume
-      </Link>
-      <Link
-        to="/Contact"
-        className={`block lg:inline ${activebBorderStyle} ${animate ? "opacity-100" : "opacity-0"
-          } ${location.pathname === '/Contact' ? 'text-red-500' : ''}`}
-        style={{ transitionDelay: "1.3s" }}
-      >
-        Contact
-      </Link>
+    <nav className="lg:flex lg:space-x-8">
+      {navLinks.map((link, index) => (
+        <Link
+          key={index}
+          to={link.path}
+          onClick={handleClick}
+          className={`lg:inline-block px-3 py-2 rounded hover:bg-gray-200 ${
+            location.pathname === link.path ? activeLinkStyle : ""
+          } ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          style={{ transitionDelay: `${index * 100}ms` }}
+        >
+          {link.text}
+        </Link>
+      ))}
     </nav>
   );
 }

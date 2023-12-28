@@ -74,77 +74,91 @@ export default function ContactForm() {
         }
     };
 
-    return (<>
+    return (
+        <>
         <form className="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
-            <div className="mb-4">
-                <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
-                    Your Name
-                </label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                />
-                {errors.name && <p className="text-red-500">{errors.name}</p>}
-            </div>
-            <div className="mb-4">
-                <label htmlFor="phoneNumber" className="block text-gray-700 text-sm font-bold mb-2">
-                    Phone No.
-                </label>
-                <input
-                    type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
-                    placeholder="+919987654301"
-                    value={formData.phoneNumber}
-                    onChange={handleInputChange}
-                />
-                {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber}</p>}
-            </div>
-            <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
-                    Mail Address
-                </label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
-                    placeholder="example@example.com"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                />
-                {errors.email && <p className="text-red-500">{errors.email}</p>}
-            </div>
-            <div className="mb-4">
-                <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
-                    Project Description
-                </label>
-                <textarea
-                    id="description"
-                    name="description"
-                    className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
-                    rows={4}
-                    placeholder="Tell us about your project..."
-                    value={formData.description}
-                    onChange={handleInputChange}
-                ></textarea>
-            </div>
-            <div className="flex justify-end">
-                <button
-                    type="submit"
-                    className="bg-[#3e4355] text-white py-2 px-4 rounded-lg hover:bg-blue-600"
-                >
-                    Hire Me
-                </button>
-            </div>
-            <div className="flex justify-center"> {successMessage && <p className="text-green-500">{successMessage}</p>}</div>
+          {/* Name */}
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
+              Your Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
+              placeholder="John Doe"
+              value={formData.name}
+              onChange={handleInputChange}
+            />
+            {errors.name && <p className="text-red-500">{errors.name}</p>}
+          </div>
+          
+          {/* Phone Number */}
+          <div className="mb-4">
+            <label htmlFor="phoneNumber" className="block text-gray-700 text-sm font-bold mb-2">
+              Phone No.
+            </label>
+            <input
+              type="text"
+              id="phoneNumber"
+              name="phoneNumber"
+              className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
+              placeholder="+919987654301"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+            />
+            {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber}</p>}
+          </div>
+  
+          {/* Email */}
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+              Mail Address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
+              placeholder="example@example.com"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+            {errors.email && <p className="text-red-500">{errors.email}</p>}
+          </div>
+          
+          {/* Description */}
+          <div className="mb-4">
+            <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
+              Project Description
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
+              rows={4}
+              placeholder="Tell us about your project..."
+              value={formData.description}
+              onChange={handleInputChange}
+            ></textarea>
+          </div>
+  
+          {/* Submit Button */}
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="bg-[#3e4355] text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+            >
+              Hire Me
+            </button>
+          </div>
+  
+          {/* Success Message */}
+          <div className="flex justify-end lg:justify-center">
+            {successMessage && <p className="text-green-500">{successMessage}</p>}
+          </div>
         </form>
-    </>
+      </>
     );
 }
