@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import profileImg from "../assets/Profile/profile.png";
 import SocialMediaIcons from "../component/SocialMediaIcons/SocialMediaIcons";
-import { TfiArrowRight } from "react-icons/tfi";
 import { HiOutlineMinus } from "react-icons/hi";
 import { Resume } from "../component/ResumeButton/ResumeButton"
 
