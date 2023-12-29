@@ -87,7 +87,7 @@ export default function ContactForm() {
               id="name"
               name="name"
               className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
-              placeholder="John Doe"
+              placeholder="Enter your Name"
               value={formData.name}
               onChange={handleInputChange}
             />
@@ -104,7 +104,7 @@ export default function ContactForm() {
               id="phoneNumber"
               name="phoneNumber"
               className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
-              placeholder="+919987654301"
+              placeholder="+Enter Your Phone No."
               value={formData.phoneNumber}
               onChange={handleInputChange}
             />

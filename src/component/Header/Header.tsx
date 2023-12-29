@@ -1,5 +1,4 @@
-// Header.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import NavigationLinks from "./NavigationLinks";
 import logo from "../../assets/Profile/create a simple 0.png";
@@ -10,18 +9,21 @@ export function Header() {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
-    setIsMounted(false);
-    if (!isMobileMenuOpen) {
-      setTimeout(() => {
-        setIsMounted(true);
-      }, 100); 
-    }
   };
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
-    setIsMounted(false); 
   };
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      setTimeout(() => {
+        setIsMounted(true);
+      }, 100); 
+    } else {
+      setIsMounted(false);
+    }
+  }, [isMobileMenuOpen]);
 
   return (
     <header className="text-textHeaderColor">
