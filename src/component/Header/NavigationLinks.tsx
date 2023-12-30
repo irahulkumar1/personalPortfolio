@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 function NavigationLinks({ closeMobileMenu }: any) {
   const location = useLocation();
   const [isMounted, setIsMounted] = useState(false);
-  const isMobile = window.innerWidth <= 768; // Define your mobile breakpoint here
+  const isMobile = window.innerWidth <= 768; 
 
   const navLinks = [
     { path: "/", text: "Home" },
@@ -23,7 +23,7 @@ function NavigationLinks({ closeMobileMenu }: any) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsMounted(true);
-    }, 100); // Delay to ensure the transition is visible
+    }, 100);
 
     return () => clearTimeout(timeout);
   }, []);
