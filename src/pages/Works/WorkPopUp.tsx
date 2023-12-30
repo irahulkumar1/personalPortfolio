@@ -12,9 +12,10 @@ interface Project {
 }
 
 interface WorkPopUpProps {
-  selectedProject: Project | null;
+  selectedProject: Project | null; 
   closeModal: () => void;
 }
+
 
 const WorkPopUp: React.FC<WorkPopUpProps> = ({ selectedProject, closeModal }) => {
   const modalRef = useRef<HTMLDivElement>(null);

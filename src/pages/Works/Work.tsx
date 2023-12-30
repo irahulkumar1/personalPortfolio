@@ -8,6 +8,8 @@ interface Project {
   image: string;
   link: string;
   tags: string[];
+  organisationWorkedWith: string;
+  organisationLogo: string;
 }
 
 const Work: React.FC = () => {
