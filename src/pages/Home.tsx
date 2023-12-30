@@ -1,22 +1,9 @@
-import { useEffect, useState } from "react";
 import profileImg from "../assets/Profile/profile.png";
 import SocialMediaIcons from "../component/SocialMediaIcons/SocialMediaIcons";
 import { HiOutlineMinus } from "react-icons/hi";
 import { Resume } from "../component/ResumeButton/ResumeButton"
 
 export default function Home() {
-  const [isArrowAnimated, setIsArrowAnimated] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsArrowAnimated((prev) => !prev);
-    }, 2000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
   return (
     <main className="relative">
        <section className="flex flex-col-reverse md:flex-row items-center justify-center h-screen gap-20 -mt-20">
@@ -54,9 +41,6 @@ export default function Home() {
         <div className="text-xl mb-[1rem] m-[2rem] lg:mb-[6rem]">
           <SocialMediaIcons />
         </div>
-        <span
-          className={`lg:pl-3 ${isArrowAnimated ? "animate-ping" : ""} origin-center`}
-        ></span>
       </section>
     </main>
   );
