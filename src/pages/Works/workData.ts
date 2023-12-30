@@ -9,7 +9,6 @@ export const projects = [
     githubLink:'',
     tags: ['React', 'TypeScript', 'Tanstack Query', 'Tailwind', 'Node.js', "MySQL"],
     description: "This is a stock market tutorial website...",
-    // Add role and responsibility details here
   },
     {
       name: 'Zamplia',

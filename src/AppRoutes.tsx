@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import  Loader from "../src/component/PortfolioLoader/Loader";
 
 const Layout = lazy(() => import("./component/Layout/Layout"));
 const Home = lazy(() => import("./pages/Home"));
@@ -15,7 +16,7 @@ function AppRoutes() {
       <Route
         path="/"
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loader/>}>
             <Layout />
           </Suspense>
         }
@@ -23,7 +24,7 @@ function AppRoutes() {
         <Route
           index
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader/>}>
               <Home />
             </Suspense>
           }
@@ -31,7 +32,7 @@ function AppRoutes() {
         <Route
           path="/About"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader/>}>
               <About />
             </Suspense>
           }
@@ -39,7 +40,7 @@ function AppRoutes() {
         <Route
           path="/Contact"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader/>}>
               <Contact />
             </Suspense>
           }
@@ -47,7 +48,7 @@ function AppRoutes() {
         <Route
           path="/Resume"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader/>}>
               <Resume />
             </Suspense>
           }
@@ -55,7 +56,7 @@ function AppRoutes() {
         <Route
           path="/Work"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader/>}>
               <Work />
             </Suspense>
           }
