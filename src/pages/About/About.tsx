@@ -1,50 +1,96 @@
+import React from "react";
+import { motion } from "framer-motion";
 import profile from "../../assets/Profile/profile2.jpg";
 import { HiOutlineMinus } from "react-icons/hi";
 import { skills } from "./skillData";
 import { Link } from "react-router-dom";
-import './About.css';
+import "./About.css";
 
+const About = () => {
+  // Animations
+  const textVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
 
-export default function About() {
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+        delay: 0.5,
+      },
+    },
+  };
+
   return (
     <div className="mt-[4rem] relative">
       <div className="flex flex-col sm:flex-row items-center">
-        <div className="w-full sm:w-1/2 flex justify-center animate-bounce-left">
+        <motion.div
+          className="w-full sm:w-1/2 flex justify-center animate-bounce-left"
+          variants={imageVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <img
             src={profile}
             alt="Your Photo"
             className="max-w-full h-auto rounded-full w-[23rem]"
           />
-        </div>
-        <div className="w-full sm:w-1/2 mt-4 sm:mt-0 flex justify-center lg:justify-start animate-right-appear">
+        </motion.div>
+        <motion.div
+          className="w-full sm:w-1/2 mt-4 sm:mt-0 flex justify-center lg:justify-start animate-right-appear"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <div>
-            <div className="flex gap-x-2  text-4xl font-bold">
+            <div className="flex gap-x-2 text-4xl font-bold">
               <span className="flex -space-x-3">
-                <span><HiOutlineMinus /></span>
-                <span><HiOutlineMinus /></span>
+                <span>
+                  <HiOutlineMinus />
+                </span>
+                <span>
+                  <HiOutlineMinus />
+                </span>
               </span>
-              <h1 className="text-darkHeadingColor mb-4">
-                About Me
-              </h1>
+              <h1 className="text-darkHeadingColor mb-4">About Me</h1>
             </div>
             <p className="text-gray-700 text-lg">
-              With 2 years of diverse development experience across various technology stacks, I bring creativity
-              and expertise to every project.
+              With 2 years of diverse development experience across various
+              technology stacks, I bring creativity and expertise to every
+              project.
             </p>
             <div className="mt-3">
-            <Link to="/Contact" className="bg-highLighter hover:bg-[#ff577f] text-white font-bold py-2 px-4 rounded-sm shadow-lg">
-              Hire me
-            </Link>
+              <Link
+                to="/Contact"
+                className="bg-highLighter hover:bg-[#ff577f] text-white font-bold py-2 px-4 rounded-sm shadow-lg"
+              >
+                Hire me
+              </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="flex justify-start lg:justfy-center lg:justify-start mt-8 ">
         <div className="font-bold text-2xl flex items-center lg:transform lg:-rotate-90 lg:-ml-9">
           <div className="flex gap-x-2 justify-start">
             <span className="flex items-center -space-x-1.5">
-              <span><HiOutlineMinus /></span>
-              <span><HiOutlineMinus /></span>
+              <span>
+                <HiOutlineMinus />
+              </span>
+              <span>
+                <HiOutlineMinus />
+              </span>
             </span>
             <p className="ml-2">My Skills</p>
           </div>
@@ -58,22 +104,29 @@ export default function About() {
               <span>{skill.name}</span>
             </div>
             <div className="h-2 bg-gray-300 rounded-full">
-              <div
+              <motion.div
                 className="h-full bg-[#3e4455] rounded-full"
                 style={{
                   width: `${(skill.percentage / 100) * 100}%`,
-                  animation: 'fillAnimation 1s ease-in-out forwards',
+                  animation: "fillAnimation 1s ease-in-out forwards",
                 }}
-              ></div>
+                initial={{ width: 0 }}
+                animate={{ width: `${(skill.percentage / 100) * 100}%` }}
+              ></motion.div>
             </div>
           </div>
         ))}
       </div>
-      <div className=" mt-5 flex justify-end">
-        <Link to="/Work" className="lg:hidden bg-darkHeadingColor text-white font-bold py-2 px-4 rounded-sm shadow-lg ">
+      <div className="mt-5 flex justify-end">
+        <Link
+          to="/Work"
+          className="lg:hidden bg-darkHeadingColor text-white font-bold py-2 px-4 rounded-sm shadow-lg "
+        >
           Projects
         </Link>
       </div>
     </div>
   );
-}
+};
+
+export default About;
