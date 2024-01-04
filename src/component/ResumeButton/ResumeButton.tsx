@@ -6,7 +6,6 @@ export const Resume = () => {
     const handleDownloadClick = () => {
         setShowProgressBar(true);
 
-        // Simulate a file download with a timeout
         const downloadFile = () => {
             return new Promise<void>((resolve) => {
                 setTimeout(() => {
@@ -17,10 +16,9 @@ export const Resume = () => {
 
         downloadFile()
             .then(() => {
-                // Create a link element to trigger the file download
                 const link = document.createElement('a');
                 link.href = '/src/assets/Resume/Rahul_cv.pdf';
-                link.download = 'Rahul_cv.pdf'; // Set the file name for download
+                link.download = 'Rahul_cv.pdf';
                 link.click();
             })
             .catch((error) => {
