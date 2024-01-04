@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import profile from "../../assets/Profile/profile2.jpg";
 import { HiOutlineMinus } from "react-icons/hi";
