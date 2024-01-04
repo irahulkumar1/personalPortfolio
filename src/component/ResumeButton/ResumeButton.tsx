@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 export const Resume = () => {
     const [showProgressBar, setShowProgressBar] = useState(false);
-    const [showOpenButton, setShowOpenButton] = useState(false);
 
     const handleDownloadClick = () => {
         setShowProgressBar(true);
@@ -18,18 +17,24 @@ export const Resume = () => {
 
         downloadFile()
             .then(() => {
-                setShowProgressBar(false);
-                setShowOpenButton(true);
+                // Create a link element to trigger the file download
+                const link = document.createElement('a');
+                link.href = '/src/assets/Resume/Rahul_cv.pdf';
+                link.download = 'Rahul_cv.pdf'; // Set the file name for download
+                link.click();
             })
             .catch((error) => {
                 console.error('Download error:', error);
+            })
+            .finally(() => {
+                setShowProgressBar(false);
             });
     };
 
     return (
         <>
             <button
-                className={`relative bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg ${showProgressBar || showOpenButton ? 'hidden' : ''
+                className={`relative bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg ${showProgressBar ? 'hidden' : ''
                     }`}
                 onClick={handleDownloadClick}
                 disabled={showProgressBar}
@@ -43,21 +48,6 @@ export const Resume = () => {
                         style={{ width: `${showProgressBar}%` }}
                     />
                 </div>
-            )}
-            {showOpenButton && (
-                <button
-                    className="bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg"
-                    onClick={() => {
-                        // Create a fake anchor element to open the downloaded file in a new tab
-                        const link = document.createElement('a');
-                        link.href = '/src/assets/Resume/Rahul_cv.pdf';
-                        link.target = '_blank';
-                        link.rel = 'noopener noreferrer';
-                        link.click();
-                    }}
-                >
-                    Open CV
-                </button>
             )}
         </>
     );
