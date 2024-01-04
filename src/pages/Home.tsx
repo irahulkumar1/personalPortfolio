@@ -1,26 +1,68 @@
+import { motion } from "framer-motion";
 import profileImg from "../assets/Profile/profile.png";
 import SocialMediaIcons from "../component/SocialMediaIcons/SocialMediaIcons";
 import { HiOutlineMinus } from "react-icons/hi";
-import { Resume } from "../component/ResumeButton/ResumeButton"
+import { Resume } from "../component/ResumeButton/ResumeButton";
 
-export default function Home() {
+const Home = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: 0.5,
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const imgVariants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <main className="relative">
-       <section className="flex flex-col-reverse md:flex-row items-center justify-center h-screen gap-20 -mt-20">
-        <div className="md:w-1/2 lg:w-[30rem] text-center">
+    <motion.main
+      className="relative"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <section className="flex flex-col-reverse md:flex-row items-center justify-center h-screen gap-20 -mt-20">
+        <motion.div
+          className="md:w-1/2 lg:w-[30rem] text-center"
+          variants={textVariants}
+        >
           <div className="text-lg font-bold text-left mb-4 flex">
             <div className="flex items-center -space-x-1.5">
               <span><HiOutlineMinus /></span>
               <span><HiOutlineMinus /></span>
-            
             </div>
             <span className="ml-3">Hello</span>
           </div>
           <div className="text-left">
             <p>
               <span className="block text-4xl font-bold">
-                I'm <span className="text-highLighter">Rahul
-                </span> Kumar
+                I'm <span className="text-highLighter">Rahul</span> Kumar
               </span>
               Web Developer with a specialization in React, based in
               Noida, Uttar Pradesh, India. I'm a passionate engineer eager to contribute my skills
@@ -30,18 +72,26 @@ export default function Home() {
               <Resume />
             </div>
           </div>
-        </div>
-        <img
+        </motion.div>
+        <motion.img
           src={profileImg}
           alt=""
           className="md:w-1/2 w-[20rem] lg:w-[36rem] lg:h-[36rem] rounded-b-full mt-4"
+          variants={imgVariants}
         />
       </section>
       <section className="absolute bottom-[-4rem] flex flex-col lg:flex-row justify-center lg:justify-between w-full items-center">
-        <div className="text-xl mb-[1rem] m-[2rem] lg:mb-[6rem]">
+        <motion.div
+          className="text-xl mb-[1rem] m-[2rem] lg:mb-[6rem]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
           <SocialMediaIcons />
-        </div>
+        </motion.div>
       </section>
-    </main>
+    </motion.main>
   );
-}
+};
+
+export default Home;

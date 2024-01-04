@@ -1,6 +1,16 @@
 import { certifications } from "./ResumeData";
+import { motion } from "framer-motion";
 
 export default function Resume() {
+  const experienceVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const educationVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <div>
       <section className="mt-10 flex justify-center">
@@ -9,7 +19,12 @@ export default function Resume() {
         </h1>
       </section>
       <section className="flex-row-reverse lg:flex lg:justify-center gap-[8rem]">
-      <div className=":lg:w-[29rem] space-y-7">
+      <motion.div
+          className="lg:w-[29rem] space-y-7"
+          initial="hidden"
+          animate="visible"
+          variants={experienceVariants}
+        >
           <div className="">
             <p className="text-darkHeadingColor text-center text-2xl font-bold p-5">Experience</p>
             <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
@@ -44,8 +59,13 @@ export default function Resume() {
               <p>Full Stack Developer Trainee</p>
             </div>
           </div>
-        </div>
-        <div className="lg:w-[29rem] space-y-7">
+          </motion.div>
+          <motion.div
+          className="lg:w-[29rem] space-y-7"
+          initial="hidden"
+          animate="visible"
+          variants={educationVariants}
+        >
           <div className="">
             <p className="text-darkHeadingColor text-center text-2xl font-bold p-5">Education </p>
             <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-xl
@@ -70,8 +90,7 @@ export default function Resume() {
               <p>Badri Narayan Saha Dayanand Anglo Vedic Public School</p>
             </div>
           </div>
-        </div>
-    
+          </motion.div>
       </section>
       <section>
         <p className="text-darkHeadingColor text-center text-2xl font-bold p-5">
@@ -83,7 +102,13 @@ export default function Resume() {
               key={index}
               className="w-[24rem] py-4"
             >
-              <div className="rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:cursor-pointer hover:shadow-md hover:transform hover:scale-105">
+              <motion.div
+                className="rounded-lg"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 0px 8px 2px rgba(0,0,0,0.1)",
+                }}
+              >
                 <a href={certification.link} target="_blank" rel="noopener noreferrer">
                   <img
                     src={certification.image}
@@ -94,7 +119,7 @@ export default function Resume() {
                     {certification.title}
                   </p>
                 </a>
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
