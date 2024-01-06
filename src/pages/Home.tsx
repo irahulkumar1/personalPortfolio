@@ -1,10 +1,35 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import profileImg from "../assets/Profile/profile.png";
 import SocialMediaIcons from "../component/SocialMediaIcons/SocialMediaIcons";
 import { HiOutlineMinus } from "react-icons/hi";
 import { Resume } from "../component/ResumeButton/ResumeButton";
+import { databases, DATABASE_ID, COLLECTION_ID, DOCUMENT_ID } from '../appwrite/appwriteConfig';
 
 const Home = () => {
+  const [viewCount, SetViewCount] = useState();
+  useEffect(() => {
+    databases
+      .getDocument(DATABASE_ID, COLLECTION_ID, DOCUMENT_ID)
+      .then((response) => {
+        const documentData = response;
+        const currentVisitCount = documentData.visitCount || 0;
+        const updatedVisitCount = currentVisitCount + 1;
+        SetViewCount(updatedVisitCount)
+        databases.updateDocument(
+          DATABASE_ID,
+          COLLECTION_ID,
+          DOCUMENT_ID,
+          { "visitCount": updatedVisitCount }
+        ).catch((error) => {
+          console.error('Error updating document:', error);
+        });
+      })
+      .catch((error) => {
+        console.error('Error fetching document:', error);
+      });
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -88,6 +113,9 @@ const Home = () => {
           transition={{ delay: 1, duration: 0.5 }}
         >
           <SocialMediaIcons />
+          <div className="mt-4">
+           <span>Visit Count:</span> {viewCount}
+          </div>
         </motion.div>
       </section>
     </motion.main>
