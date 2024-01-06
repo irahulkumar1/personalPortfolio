@@ -113,9 +113,11 @@ const Home = () => {
           transition={{ delay: 1, duration: 0.5 }}
         >
           <SocialMediaIcons />
-          <div className="mt-4">
-           <span>Visit Count:</span> {viewCount}
-          </div>
+          {viewCount !== undefined && (
+            <div className="mt-4">
+              <span>Visit Count:</span> {viewCount}
+            </div>
+          )}
         </motion.div>
       </section>
     </motion.main>
