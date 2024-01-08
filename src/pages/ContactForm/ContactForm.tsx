@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { databases, DATABASE_ID, FormDataID as COLLECTION_ID, ID } from '../../appwrite/appwriteConfig'; 
 
 export default function ContactForm() {
     const initialFormData = {
@@ -6,52 +7,45 @@ export default function ContactForm() {
         email: '',
         phoneNumber: '',
         description: ''
-    };
+      };
 
-    const [formData, setFormData] = useState(initialFormData);
-    const [successMessage, setSuccessMessage] = useState<string | null>(null);
-    const [errors, setErrors] = useState({
-        name: '',
-        email: '',
-        phoneNumber: ''
-    });
-
-    const validateEmail = (email: string) => {
-        // Simple email validation regex
-        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-        return emailRegex.test(email);
-    };
-
-    const validatePhoneNumber = (phoneNumber: string) => {
-        // Simple phone number validation regex
-        const phoneRegex = /^\+?[0-9]*$/;
-        return phoneRegex.test(phoneNumber);
-    };
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      const [formData, setFormData] = useState(initialFormData);
+      const [successMessage, setSuccessMessage] = useState<string | null>(null);
+      const [errors, setErrors] = useState({
+          name: '',
+          email: '',
+          phoneNumber: ''
+      });
+  
+      const validateEmail = (email: string) => {
+          const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+          return emailRegex.test(email);
+      };
+  
+      const validatePhoneNumber = (phoneNumber: string) => {
+          const phoneRegex = /^\+?[0-9]*$/;
+          return phoneRegex.test(phoneNumber);
+      };
+  
+      const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        // Check if there are any errors before submitting
         if (Object.values(errors).some((error) => error !== "")) {
-            // If there are errors, don't submit the form
             console.error('Form submission failed due to validation errors');
             return;
         }
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbyBwaKvH2qgFOD8nOH9hI1DdeqpuH98c170w4M1IpZ1Ri1hZaxXNhCDJWO6Nmv6EBrSEg/exec', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
+            const response = await databases.createDocument(
+                DATABASE_ID,
+                COLLECTION_ID,
+                ID.unique(),
+                formData 
+            );
+            if (response.$id) {
                 setSuccessMessage("Form submitted successfully!");
-                setFormData(initialFormData); // Clear form fields
+                setFormData(initialFormData);
             } else {
-                // Handle errors
                 console.error('Form submission failed');
             }
         } catch (error) {
@@ -59,25 +53,24 @@ export default function ContactForm() {
         }
     };
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-        // Validate input and update errors
-        if (name === "name" && value.trim() === "") {
-            setErrors({ ...errors, [name]: "Name is required" });
-        } else if (name === "email" && !validateEmail(value)) {
-            setErrors({ ...errors, [name]: "Invalid email address" });
-        } else if (name === "phoneNumber" && !validatePhoneNumber(value)) {
-            setErrors({ ...errors, [name]: "Invalid phone number" });
-        } else {
-            setErrors({ ...errors, [name]: "" }); // Clear error message
-        }
-    };
+      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+          const { name, value } = e.target;
+          setFormData({ ...formData, [name]: value });
+  
+          if (name === "name" && value.trim() === "") {
+              setErrors({ ...errors, [name]: "Name is required" });
+          } else if (name === "email" && !validateEmail(value)) {
+              setErrors({ ...errors, [name]: "Invalid email address" });
+          } else if (name === "phoneNumber" && !validatePhoneNumber(value)) {
+              setErrors({ ...errors, [name]: "Invalid phone number" });
+          } else {
+              setErrors({ ...errors, [name]: "" });
+          }
+      };
 
     return (
         <>
         <form className="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
-          {/* Name */}
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
               Your Name
@@ -93,8 +86,6 @@ export default function ContactForm() {
             />
             {errors.name && <p className="text-red-500">{errors.name}</p>}
           </div>
-          
-          {/* Phone Number */}
           <div className="mb-4">
             <label htmlFor="phoneNumber" className="block text-gray-700 text-sm font-bold mb-2">
               Phone No.
@@ -110,8 +101,6 @@ export default function ContactForm() {
             />
             {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber}</p>}
           </div>
-  
-          {/* Email */}
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
               Mail Address
@@ -127,8 +116,6 @@ export default function ContactForm() {
             />
             {errors.email && <p className="text-red-500">{errors.email}</p>}
           </div>
-          
-          {/* Description */}
           <div className="mb-4">
             <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
               Project Description
@@ -143,8 +130,6 @@ export default function ContactForm() {
               onChange={handleInputChange}
             ></textarea>
           </div>
-  
-          {/* Submit Button */}
           <div className="flex justify-center">
             <button
               type="submit"
@@ -153,8 +138,6 @@ export default function ContactForm() {
               Hire Me
             </button>
           </div>
-  
-          {/* Success Message */}
           <div className="flex justify-end lg:justify-center">
             {successMessage && <p className="text-green-500">{successMessage}</p>}
           </div>
