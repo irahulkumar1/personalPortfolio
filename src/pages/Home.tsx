@@ -4,31 +4,65 @@ import profileImg from "../assets/Profile/profile.png";
 import SocialMediaIcons from "../component/SocialMediaIcons/SocialMediaIcons";
 import { HiOutlineMinus } from "react-icons/hi";
 import { Resume } from "../component/ResumeButton/ResumeButton";
+import { v4 as uuidv4 } from 'uuid';
 import { databases, DATABASE_ID, COLLECTION_ID, DOCUMENT_ID } from '../appwrite/appwriteConfig';
 
 const Home = () => {
-  const [viewCount, SetViewCount] = useState();
+  const [viewCount, setViewCount] = useState<number>();
+
   useEffect(() => {
-    databases
-      .getDocument(DATABASE_ID, COLLECTION_ID, DOCUMENT_ID)
-      .then((response) => {
-        const documentData = response;
-        const currentVisitCount = documentData.visitCount || 0;
-        const updatedVisitCount = currentVisitCount + 1;
-        SetViewCount(updatedVisitCount)
-        databases.updateDocument(
-          DATABASE_ID,
-          COLLECTION_ID,
-          DOCUMENT_ID,
-          { "visitCount": updatedVisitCount }
-        ).catch((error) => {
-          console.error('Error updating document:', error);
-        });
-      })
-      .catch((error) => {
-        console.error('Error fetching document:', error);
-      });
+    const storedCount = localStorage.getItem('viewCount');
+    if (storedCount) {
+      setViewCount(parseInt(storedCount));
+    } else {
+      incrementViewCount();
+    }
   }, []);
+
+  const incrementViewCount = () => {
+    const userId = localStorage.getItem('userId');
+
+    if (!userId) {
+      const newUserId = uuidv4();
+      localStorage.setItem('userId', newUserId);
+
+      databases.getDocument(DATABASE_ID, COLLECTION_ID, DOCUMENT_ID)
+        .then((response) => {
+          const documentData = response;
+          const currentVisitCount = documentData.visitCount || 0;
+          const updatedVisitCount = currentVisitCount + 1;
+          setViewCount(updatedVisitCount);
+          localStorage.setItem('viewCount', updatedVisitCount.toString());
+
+          databases.updateDocument(
+            DATABASE_ID,
+            COLLECTION_ID,
+            DOCUMENT_ID,
+            { "visitCount": updatedVisitCount }
+          ).catch((error) => {
+            console.error('Error updating document:', error);
+          });
+        })
+        .catch((error) => {
+          console.error('Error fetching document:', error);
+        });
+    }
+  };
+
+  useEffect(() => {
+    if (viewCount === null) {
+      databases.getDocument(DATABASE_ID, COLLECTION_ID, DOCUMENT_ID)
+        .then((response) => {
+          const documentData = response;
+          const currentVisitCount = documentData.visitCount || 0;
+          setViewCount(currentVisitCount);
+          localStorage.setItem('viewCount', currentVisitCount.toString());
+        })
+        .catch((error) => {
+          console.error('Error fetching document:', error);
+        });
+    }
+  }, [viewCount]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
