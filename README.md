@@ -1,41 +1,37 @@
+```markdown
+# Rahul's Portfolio
 
-# Personal Project
-
-Brief description of your Vite.js project.
-
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Demo](#demo)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Project Overview
-
-This is my Personal Porfolio where i am shocasing my abilities and skills.
-
-## Demo
-
-Live Demo Link
+Welcome to my personal portfolio! This repository showcases my skills and projects.
 
 ## Getting Started
 
-Provide instructions on how to get the project up and running on a local machine using Vite.js. Include any prerequisites and installation steps.
+To clone this project, use the following command:
 
 ```bash
-# Clone the repository
-git clone https://github.com/irahulkumar1/personalPortfolio.git
+git clone [repository_url]
+```
 
-# Change directory
-cd personalPortfolio
+### Prerequisites
 
-# Install dependencies
+Ensure you have Node.js installed on your machine.
+
+### Installation and Running
+
+1. Navigate to the project directory.
+2. Install dependencies:
+
+```bash
 npm install
+```
 
-# Start the development server
+3. Start the project:
+
+```bash
 npm run dev
 ```
+
+This project was built using Vite, React, Tailwind CSS, Framer Motion, and TypeScript. The backend is supported by Apprite, a backend-as-a-service platform.
+
+## Visit My Portfolio
+
+Check out my portfolio live at [Rahul's Portfolio](https://rahulks.netlify.app/).
