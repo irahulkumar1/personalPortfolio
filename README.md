@@ -5,8 +5,11 @@ Welcome to my personal portfolio! This repository showcases my skills and projec
 
 ## Getting Started
 
-clone this project, by git clone and the URL of this repo
+To clone this project, use the following command:
 
+```bash
+git clone [repository_url]
+```
 
 ### Prerequisites
 
