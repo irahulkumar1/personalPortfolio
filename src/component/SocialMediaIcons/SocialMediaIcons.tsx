@@ -4,7 +4,7 @@ const SocialMediaIcons = () => {
     const instagramLink = `https://www.instagram.com/irahulks/`;
     const gitHubLink = `https://github.com/irahulkumar1`;
     const twitterLink = `https://twitter.com/irahulkv`;
-    const linkedInLink = `https://www.linkedin.com/in/irahulkv/`;
+    const linkedInLink = `https://www.linkedin.com/in/irahulk/`;
 
     return (
         <ul className="flex gap-6">
