@@ -41,6 +41,7 @@ const About = () => {
           animate="visible"
         >
           <img
+            loading="lazy"
             src={profile}
             alt="Your Photo"
             className="max-w-full h-auto rounded-full w-[23rem]"

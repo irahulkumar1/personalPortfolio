@@ -73,6 +73,7 @@ const Work: React.FC = () => {
             >
               <div className="relative">
                 <img
+                  loading="lazy"
                   src={project.image}
                   alt={project.name}
                   className="w-full h-56 object-cover object-center cursor-pointer"

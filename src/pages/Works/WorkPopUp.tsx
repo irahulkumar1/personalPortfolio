@@ -13,7 +13,7 @@ interface Project {
 }
 
 interface WorkPopUpProps {
-  selectedProject: Project | null; 
+  selectedProject: Project | null;
   closeModal: () => void;
 }
 
@@ -89,11 +89,11 @@ const WorkPopUp: React.FC<WorkPopUpProps> = ({ selectedProject, closeModal }) =>
         <div className="mb-4">
           <h3 className="text-xl font-semibold mb-2">Organisation</h3>
           {selectedProject.organisationLogo && (
-            <img src={selectedProject.organisationLogo} alt="Company Logo" className="mt-2 h-10" />
+            <img loading="lazy" src={selectedProject.organisationLogo} alt="Company Logo" className="mt-2 h-10" />
           )}
           <p className="text-gray-600">{selectedProject.organisationWorkedWith}</p>
         </div>
-        </motion.div>
+      </motion.div>
     </motion.div>
   );
 };
