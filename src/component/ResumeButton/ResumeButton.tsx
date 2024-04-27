@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import resumePDF from '/src/assets/Resume/Rahul_cv.pdf'; 
+import resumePDF from '/src/assets/Resume/Rahulk_resume.pdf'; 
 
 export const Resume = () => {
     const [showProgressBar, setShowProgressBar] = useState(false);
