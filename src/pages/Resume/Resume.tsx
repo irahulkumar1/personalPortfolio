@@ -6,6 +6,7 @@ import fyndImg from "../../assets/CompanyLogo/fynd.png";
 import { BsBriefcaseFill } from "react-icons/bs";
 import { FaUserGraduate, FaSchool } from "react-icons/fa";
 import { FcGraduationCap } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 export default function Resume() {
   const experienceVariants = {
@@ -42,7 +43,9 @@ export default function Resume() {
             hover:transform hover:translate-x-2">
               <p className="text-sm font-medium flex items-center">
                 <span className="hover:cursor-pointer">
-                  <img loading="lazy" src={pisc} alt="pisc" className="w-16 h-auto py-3 mr-4" />
+                  <a href="https://pandoconsultants.com/" target="_blank">
+                    <img loading="lazy" src={pisc} alt="pisc" className="w-16 h-auto py-3 mr-4" />
+                  </a>
                 </span>Sep 2022 to Present</p>
               <p className="text-xl font-semibold">
                 Pando India Software Consultants
@@ -54,7 +57,10 @@ export default function Resume() {
             <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:shadow-xl
             hover:transform hover:translate-x-2">
               <p className="text-sm font-medium flex items-center ">
-                <span className="hover:cursor-pointer"><img loading="lazy" src={nmsGames} alt="nmsGames" className="w-10 h-auto py-3 mr-4" />
+                <span className="hover:cursor-pointer">
+                <a href="https://nmsgames.com/" target="_blank">
+                  <img loading="lazy" src={nmsGames} alt="nmsGames" className="w-10 h-auto py-3 mr-4" />
+                </a>
                 </span>Nov 2021 to Aug 2022</p>
               <p className="text-xl font-semibold">
                 NMS Games Private Ltd
@@ -66,7 +72,11 @@ export default function Resume() {
             <div className="px-5 py-3 text-textColor bg-[#e5e8f3] rounded-lg transition-transform duration-300 ease-in-out hover:bg-[#dee1ec] hover:shadow-xl
             hover:transform hover:translate-x-2">
               <p className="text-sm font-medium flex items-center">
-                <span className="hover:cursor-pointer"><img loading="lazy" className="w-16 h-auto py-3 mr-4" src={fyndImg} alt="fyndImg" /></span>
+                <span className="hover:cursor-pointer">
+                <a href="https://www.fynd.com/" target="_blank">
+                  <img loading="lazy" className="w-16 h-auto py-3 mr-4" src={fyndImg} alt="fyndImg" />
+                </a>
+                  </span>
                 Aug 2021 to Oct 2021
               </p>
               <p className="text-xl font-semibold">
@@ -108,7 +118,6 @@ export default function Resume() {
                   <FaSchool className="w-8 h-auto py-3 mr-4" />
                 </span>Nov 2021 to July 2022</p>
               <p className="text-xl font-semibold">
-                {/* <span>Icon</span> */}
                 Higher Secondary School Certificate
               </p>
               <p>Badri Narayan Saha Dayanand Anglo Vedic Public School</p>
