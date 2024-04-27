@@ -18,7 +18,6 @@ export const Resume = () => {
 
         downloadFile()
             .then(() => {
-
                 const link = document.createElement('a');
                 link.href = resumePDF; 
                 link.download = 'Rahul_cv.pdf';

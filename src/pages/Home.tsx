@@ -123,7 +123,7 @@ const Home = () => {
               <span className="block text-4xl font-bold">
                 I'm <span className="text-highLighter">Rahul</span> Kumar
               </span>
-              Web Developer with a specialization in React, based in
+              Web Developer with specialization in React, based in
               Noida, Uttar Pradesh, India. I'm a passionate engineer eager to contribute my skills
               and collaborate with teams around the world.
             </p>
@@ -135,6 +135,7 @@ const Home = () => {
         <motion.img
           src={profileImg}
           alt=""
+          loading="lazy"
           className="md:w-1/2 w-[20rem] lg:w-[36rem] lg:h-[36rem] rounded-b-full mt-4"
           variants={imgVariants}
         />
