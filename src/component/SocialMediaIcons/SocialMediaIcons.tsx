@@ -15,7 +15,7 @@ const SocialMediaIcons = () => {
                     rel="noopener noreferrer"
                     className="icon-link"
                 >
-                    <TfiLinkedin className="icon" />
+                    <TfiLinkedin className="icon text-2xl" />
                 </a>
             </li>
             <li className="cursor-pointer group transform transition-transform duration-500 hover:scale-125">
@@ -25,7 +25,7 @@ const SocialMediaIcons = () => {
                     rel="noopener noreferrer"
                     className="icon-link"
                 >
-                    <TfiGithub className="icon" />
+                    <TfiGithub className="icon text-2xl" />
                 </a>
             </li>
             <li className="cursor-pointer group transform transition-transform duration-500 hover:scale-125">
@@ -35,7 +35,7 @@ const SocialMediaIcons = () => {
                     rel="noopener noreferrer"
                     className="icon-link"
                 >
-                    <TfiInstagram className="icon" />
+                    <TfiInstagram className="icon text-2xl" />
                 </a>
             </li>
             <li className="cursor-pointer group transform transition-transform duration-500 hover:scale-125">
@@ -45,7 +45,7 @@ const SocialMediaIcons = () => {
                     rel="noopener noreferrer"
                     className="icon-link"
                 >
-                    <TfiTwitter className="icon" />
+                    <TfiTwitter className="icon text-2xl" />
                 </a>
             </li>
         </ul>

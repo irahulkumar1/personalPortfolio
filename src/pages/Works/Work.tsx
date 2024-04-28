@@ -20,7 +20,6 @@ const Work: React.FC = () => {
   const [showGrid, setShowGrid] = useState(false);
 
   useEffect(() => {
-    // Set a slight delay to simulate loading
     const timer = setTimeout(() => {
       setShowGrid(true);
     }, 500);
@@ -58,7 +57,7 @@ const Work: React.FC = () => {
       </h1>
       {showGrid && (
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"
           initial="initial"
           animate="animate"
           variants={gridVariants}

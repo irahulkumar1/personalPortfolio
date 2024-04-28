@@ -123,7 +123,7 @@ export default function ContactForm() {
           <textarea
             id="description"
             name="description"
-            className="w-full p-2 border rounded focus:outline-none focus:border-blue-500"
+            className="horizontal w-full p-2 border rounded focus:outline-none focus:border-blue-500"
             rows={4}
             placeholder="Tell us about your project..."
             value={formData.description}
@@ -134,7 +134,7 @@ export default function ContactForm() {
           <button
             type="submit"
             className={`bg-[#3e4355] text-white py-2 px-4 rounded-lg hover:bg-[#292e40] ${(!formData.name || !formData.email || Object.values(errors).some(error => error !== ""))
-                ? 'opacity-50 cursor-not-allowed' : ''
+              ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             disabled={!formData.name || !formData.email || Object.values(errors).some(error => error !== "")}
           >
