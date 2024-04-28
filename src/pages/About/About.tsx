@@ -65,13 +65,13 @@ const About = () => {
               </span>
               <h1 className="text-darkHeadingColor mb-4">About Me</h1>
             </div>
-            <p className="text-gray-700 text-lg Caveat]">
+            <p className="text-gray-700 text-2xl font-semibold font-caviateFont">
               With 2.6 years of immersive experience across diverse technology stacks, I'm dedicated to infusing creativity and expertise into every project. From conception to execution, I strive to push boundaries, crafting compelling solutions that resonate and drive tangible results. My passion for innovation fuels my commitment to delivering excellence, ensuring each endeavor leaves a lasting impact.
             </p>
-            <div className="mt-3">
+            <div className="mt-5">
               <Link
                 to="/Contact"
-                className="bg-highLighter hover:bg-[#ff577f] text-white font-bold py-2 px-4 rounded-sm shadow-lg"
+                className="bg-highLighter hover:bg-[#ff577f] text-white font-bold py-2 px-4 rounded-md shadow-lg"
               >
                 Hire me
               </Link>
@@ -90,7 +90,7 @@ const About = () => {
                 <HiOutlineMinus />
               </span>
             </span>
-            <p className="ml-2">My Skills</p>
+            <p className="ml-2 ">My Skills</p>
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ const About = () => {
         {skills.map((skill, index) => (
           <div key={index} className="mb-4">
             <div className="text-left font-semibold flex items-center gap-2 p-2">
-              <span className="text-[1.6rem] flex">{skill.icon}</span>
+              <span className="text-[2rem] flex">{skill.icon}</span>
               <span>{skill.name}</span>
             </div>
             <div className="h-2 bg-gray-300 rounded-full">
