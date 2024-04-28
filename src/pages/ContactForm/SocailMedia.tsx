@@ -3,7 +3,7 @@ import SocialMediaIcons from "../../component/SocialMediaIcons/SocialMediaIcons"
 
 const SocialMedia = () => {
   const phoneNumber = "+919955956721";
-  const emailAddress = "irahulkv@gmail.com";
+  const emailAddress = "irahulkv@gmail.com, irahulkv@outlook.com";
   const location = "Noida, UP, India";
 
   const handlePhoneCall = () => {
