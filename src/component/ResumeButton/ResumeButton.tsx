@@ -36,7 +36,7 @@ export const Resume = () => {
     return (
         <>
             <button
-                className={`relative bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-sm shadow-lg ${
+                className={`relative bg-highLighter hover:bg-[#ff577f] mt-3 text-white font-bold py-2 px-4 rounded-md shadow-lg ${
                     showProgressBar ? 'hidden' : ''
                 }`}
                 onClick={handleDownloadClick}

@@ -14,7 +14,7 @@ function NavigationLinks({ closeMobileMenu }: any) {
     { path: "/Contact", text: "Contact" },
   ];
 
-  const activeLinkStyle = "text-red-500";
+  const activeLinkStyle = "text-red-500 bg-gray-200 px-3";
 
   const handleClick = () => {
     closeMobileMenu();
@@ -37,7 +37,7 @@ function NavigationLinks({ closeMobileMenu }: any) {
           onClick={handleClick}
           className={`${
             isMobile ? "block py-2 text-center" : "inline-block"
-          } px-3 py-2 rounded hover:bg-gray-200 ${
+          } px-3 py-2 rounded-[1rem] hover:bg-gray-200 ${
             location.pathname === link.path ? activeLinkStyle : ""
           } ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           style={{ transitionDelay: `${isMounted ? index * 100 : 0}ms` }}

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import NavigationLinks from "./NavigationLinks";
-// import logo from "../../assets/Profile/logoR.png";
 import logo from "../../assets/Profile/newLogo.jpeg";
 import { Link } from "react-router-dom";
 
@@ -29,7 +28,7 @@ export function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="text-textHeaderColor">
+    <header className="text-textHeaderColor font-semibold">
       <div className="flex items-center justify-between">
         <button onClick={toggleMobileMenu} className="lg:hidden block focus:outline-none">
           {isMobileMenuOpen ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}

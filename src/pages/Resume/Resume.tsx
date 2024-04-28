@@ -6,7 +6,6 @@ import fyndImg from "../../assets/CompanyLogo/fynd.png";
 import { BsBriefcaseFill } from "react-icons/bs";
 import { FaUserGraduate, FaSchool } from "react-icons/fa";
 import { FcGraduationCap } from "react-icons/fc";
-import { Link } from "react-router-dom";
 
 export default function Resume() {
   const experienceVariants = {
