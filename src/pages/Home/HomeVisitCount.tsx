@@ -10,13 +10,13 @@ const useVisitCount = () => {
     if (!storedUserId) {
       const newUserId = uuidv4();
       localStorage.setItem('userId', newUserId);
-      incrementViewCount(newUserId);
+      incrementViewCount();
     } else {
       getVisitCount();
     }
   }, []);
 
-  const incrementViewCount = (userId: string) => {
+  const incrementViewCount = () => {
     databases.getDocument(DATABASE_ID, COLLECTION_ID, DOCUMENT_ID)
       .then((response) => {
         const currentVisitCount = response.visitCount || 0;
