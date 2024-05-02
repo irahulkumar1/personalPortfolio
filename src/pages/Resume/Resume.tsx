@@ -60,7 +60,7 @@ export default function Resume() {
                 <a href="https://nmsgames.com/" target="_blank">
                   <img loading="lazy" src={nmsGames} alt="nmsGames" className="w-10 h-auto py-3 mr-4" />
                 </a>
-                </span>Nov 2021 to Aug 2022</p>
+                </span>Nov 2021 to Jul 2022</p>
               <p className="text-xl font-semibold">
                 NMS Games Private Ltd
               </p>
