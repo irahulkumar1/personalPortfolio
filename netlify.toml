@@ -3,3 +3,9 @@
   to = "/dynamic/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/Work/*"
+  to = "/Work/:splat"
+  status = 200
+  force = true
